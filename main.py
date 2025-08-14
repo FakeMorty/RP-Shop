@@ -120,7 +120,8 @@ async def handle_help(message: types.Message):
             "<code>/give [ID] [сумма]</code> - выдать золото.\n"
             "<code>/take [ID] [сумма]</code> - забрать золото.\n"
             "<code>/ban [ID]</code> - заблокировать.\n"
-            "<code>/unban [ID]</code> - разблокировать."
+            "<code>/unban [ID]</code> - разблокировать.\n"
+            "<code>/profile [ID]</code> - посмотреть профиль."
         )
     if message.from_user.id == OWNER_ID:
         text += (
@@ -165,6 +166,8 @@ async def handle_forwarded_anketa(message: types.Message):
             logging.error(f"Не удалось отправить запрос администратору {admin_id}: {e}")
             
     await message.answer("✅ <b>Спасибо!</b>\nВаша анкета отправлена на проверку.")
+
+# --- ОБРАБОТЧИКИ РЕГИСТРАЦИИ (ДО ГЛОБАЛЬНЫХ ФИЛЬТРОВ) ---
 
 @dp.callback_query(RegistrationCallback.filter(F.action == "approve"))
 async def handle_approve_callback(query: types.CallbackQuery, callback_data: RegistrationCallback):
@@ -437,6 +440,54 @@ async def unban_user_command(message: types.Message):
             logging.warning(f"Не удалось уведомить пользователя {user_id} о разбане: {e}")
     except (ValueError, IndexError):
         await message.answer("❌ Неверный формат. Используйте:\n<code>/unban [ID_пользователя]</code>")
+
+@dp.message(Command("profile"), IsAdminFilter())
+async def admin_view_profile(message: types.Message):
+    try:
+        args = message.text.split()
+        if len(args) != 2:
+            await message.answer("❌ Неверный формат. Используйте:\n<code>/profile [ID_пользователя]</code>")
+            return
+            
+        target_user_id = int(args[1])
+        
+        if not db.user_exists(target_user_id):
+            await message.answer(f"❌ Пользователь с ID <code>{target_user_id}</code> не найден в базе.")
+            return
+
+        user_balance = db.get_user_balance(target_user_id)
+        is_banned = db.is_user_banned(target_user_id)
+        is_admin = db.is_user_admin(target_user_id)
+        anketa_data = db.get_user_anketa(target_user_id)
+
+        status_ban = "✅ Нет" if not is_banned else "🚫 <b>ДА</b>"
+        status_admin = "✅ Да" if is_admin else "❌ Нет"
+        
+        profile_text = (
+            f"<b>👤 Профиль пользователя <code>{target_user_id}</code></b>\n\n"
+            f"💰 Баланс: <b>{user_balance}</b> золотых\n"
+            f"👑 Админ: {status_admin}\n"
+            f"⛔️ Заблокирован: {status_ban}"
+        )
+        
+        await message.answer(profile_text)
+
+        if anketa_data:
+            chat_id, message_id = anketa_data
+            try:
+                await bot.forward_message(
+                    chat_id=message.chat.id,
+                    from_chat_id=chat_id,
+                    message_id=message_id
+                )
+            except Exception as e:
+                await message.answer("<i>Не удалось переслать анкету (возможно, она удалена из канала).</i>")
+                logging.error(f"Ошибка пересылки анкеты для {target_user_id} по запросу админа {message.from_user.id}: {e}")
+        else:
+            await message.answer("<i>У пользователя не найдена привязанная анкета.</i>")
+
+    except (ValueError, IndexError):
+        await message.answer("❌ Неверный формат ID. ID должен быть числом.\nИспользуйте: <code>/profile [ID_пользователя]</code>")
 
 @dp.message(Command("addadmin"), F.from_user.id == OWNER_ID)
 async def add_admin_command(message: types.Message):
