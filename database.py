@@ -21,7 +21,9 @@ def init_db():
                 username TEXT NOT NULL,
                 balance INTEGER NOT NULL DEFAULT 0,
                 is_admin INTEGER NOT NULL DEFAULT 0,
-                is_banned INTEGER NOT NULL DEFAULT 0
+                is_banned INTEGER NOT NULL DEFAULT 0,
+                anketa_chat_id INTEGER,
+                anketa_message_id INTEGER
             )
         ''')
         
@@ -63,6 +65,37 @@ def add_user(user_id: int, username: str):
     finally:
         if conn:
             conn.close()
+
+def set_user_anketa(user_id: int, chat_id: int, message_id: int):
+    """Сохраняет информацию об анкете пользователя."""
+    try:
+        conn = sqlite3.connect('shop.db')
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET anketa_chat_id = ?, anketa_message_id = ? WHERE user_id = ?", (chat_id, message_id, user_id))
+        conn.commit()
+        logging.info(f"Анкета для пользователя {user_id} сохранена.")
+    except sqlite3.Error as e:
+        logging.error(f"Ошибка при сохранении анкеты для {user_id}: {e}")
+    finally:
+        if conn:
+            conn.close()
+
+def get_user_anketa(user_id: int) -> tuple | None:
+    """Возвращает (anketa_chat_id, anketa_message_id) пользователя."""
+    anketa_data = None
+    try:
+        conn = sqlite3.connect('shop.db')
+        cursor = conn.cursor()
+        cursor.execute("SELECT anketa_chat_id, anketa_message_id FROM users WHERE user_id = ?", (user_id,))
+        result = cursor.fetchone()
+        if result and result[0] and result[1]:
+            anketa_data = result
+    except sqlite3.Error as e:
+        logging.error(f"Ошибка при получении анкеты для {user_id}: {e}")
+    finally:
+        if conn:
+            conn.close()
+    return anketa_data
 
 def user_exists(user_id: int) -> bool:
     """Проверяет, существует ли пользователь в базе."""

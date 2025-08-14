@@ -2,6 +2,9 @@
 
 import asyncio
 import logging
+from flask import Flask
+from threading import Thread
+import os
 
 from aiogram import Bot, Dispatcher, F, types
 from aiogram.filters import CommandStart, Command, BaseFilter
@@ -15,9 +18,6 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.exceptions import TelegramBadRequest
 
 import database as db
-from flask import Flask
-from threading import Thread
-import os 
 
 # --- НАСТРОЙКИ БОТА (КОНФИГУРАЦИЯ) ---
 BOT_TOKEN = "8468997703:AAGuhe11JhsTrn0XMb-kHHz1QcRq837IP0M"
@@ -40,34 +40,60 @@ class IsAdminFilter(BaseFilter):
 
 class IsNotBannedFilter(BaseFilter):
     async def __call__(self, event: types.Update) -> bool:
-        user_id = event.from_user.id
+        user = getattr(event, 'from_user', None)
+        if user is None:
+            return True
+        
+        user_id = user.id
         if db.is_user_banned(user_id):
             logging.warning(f"Заблокированный пользователь {user_id} попытался выполнить действие.")
+            if isinstance(event, types.Message):
+                 await event.answer("Вы заблокированы и не можете использовать этого бота.")
+            elif isinstance(event, types.CallbackQuery):
+                 await event.answer("Вы заблокированы.", show_alert=True)
             return False
         return True
+
 # --- КЛАССЫ ДЛЯ CALLBACK'ОВ И СОСТОЯНИЙ ---
 class RegistrationCallback(CallbackData, prefix="register"):
-    action: str; user_id: int; username: str
+    action: str
+    user_id: int
+    username: str
+    chat_id: int
+    msg_id: int
+
 class BuyItemCallback(CallbackData, prefix="buy"):
     item_id: int
+
 class ManageItemCallback(CallbackData, prefix="manage"):
-    action: str; item_id: int
+    action: str
+    item_id: int
+
 class AddItemFSM(StatesGroup):
-    waiting_for_name = State(); waiting_for_description = State(); waiting_for_photo = State(); waiting_for_price = State()
+    waiting_for_name = State()
+    waiting_for_description = State()
+    waiting_for_photo = State()
+    waiting_for_price = State()
 
 
 # --- КЛАВИАТУРЫ ---
 def get_main_menu_keyboard():
     builder = ReplyKeyboardBuilder()
-    builder.button(text="💰 Мой кошелек"); builder.button(text="🛍️ Мои товары"); builder.button(text="➕ Добавить товар")
-    builder.adjust(2, 1)
+    builder.button(text="💰 Мой кошелек"); builder.button(text="🛍️ Мои товары")
+    builder.button(text="👤 Моя анкета"); builder.button(text="➕ Добавить товар")
+    builder.adjust(2, 2)
     return builder.as_markup(resize_keyboard=True)
+
 def get_cancel_keyboard():
-    builder = ReplyKeyboardBuilder(); builder.button(text="❌ Отмена")
+    builder = ReplyKeyboardBuilder()
+    builder.button(text="❌ Отмена")
     return builder.as_markup(resize_keyboard=True)
+
 def get_buy_button(item_id: int):
-    builder = InlineKeyboardBuilder(); builder.button(text="💰 Купить", callback_data=BuyItemCallback(item_id=item_id).pack())
+    builder = InlineKeyboardBuilder()
+    builder.button(text="💰 Купить", callback_data=BuyItemCallback(item_id=item_id).pack())
     return builder.as_markup()
+
 # --- ГЛАВНЫЕ ОБРАБОТЧИКИ (ДОСТУПНЫ ВСЕМ) ---
 
 @dp.message(CommandStart())
@@ -110,22 +136,34 @@ async def handle_forwarded_anketa(message: types.Message):
     if db.user_exists(user.id):
         await message.answer("Вы уже зарегистрированы в системе.")
         return
+    
+    if not message.forward_from_chat or not message.forward_from_message_id:
+        await message.answer("Пожалуйста, перешлите сообщение именно из канала, а не от пользователя или из закрытой группы.")
+        return
+
     builder = InlineKeyboardBuilder()
-    builder.button(text="✅ Подтвердить", callback_data=RegistrationCallback(action="approve", user_id=user.id, username=user.username or "user").pack())
-    builder.button(text="❌ Отклонить", callback_data=RegistrationCallback(action="decline", user_id=user.id, username=user.username or "user").pack())
+    chat_id = message.forward_from_chat.id
+    msg_id = message.forward_from_message_id
+    
+    builder.button(text="✅ Подтвердить", callback_data=RegistrationCallback(action="approve", user_id=user.id, username=user.username or "user", chat_id=chat_id, msg_id=msg_id).pack())
+    builder.button(text="❌ Отклонить", callback_data=RegistrationCallback(action="decline", user_id=user.id, username=user.username or "user", chat_id=chat_id, msg_id=msg_id).pack())
     builder.adjust(2)
+    
     confirmation_request_text = (f"⚠️ <b>Запрос на регистрацию</b> ⚠️\n\nПользователь: @{user.username} (ID: <code>{user.id}</code>)")
     admin_ids_from_db = db.get_all_admins()
+    
     if not admin_ids_from_db:
         logging.warning("Нет администраторов для отправки запроса на регистрацию!")
         await message.answer("Не удалось найти администраторов для проверки. Обратитесь к владельцу бота.")
         return
+        
     for admin_id in admin_ids_from_db:
         try:
             await bot.forward_message(chat_id=admin_id, from_chat_id=message.chat.id, message_id=message.message_id)
             await bot.send_message(chat_id=admin_id, text=confirmation_request_text, reply_markup=builder.as_markup())
         except Exception as e:
             logging.error(f"Не удалось отправить запрос администратору {admin_id}: {e}")
+            
     await message.answer("✅ <b>Спасибо!</b>\nВаша анкета отправлена на проверку.")
 
 @dp.callback_query(RegistrationCallback.filter(F.action == "approve"))
@@ -133,6 +171,7 @@ async def handle_approve_callback(query: types.CallbackQuery, callback_data: Reg
     admin_username = query.from_user.username or "Администратор"
     if not db.user_exists(callback_data.user_id):
         db.add_user(user_id=callback_data.user_id, username=callback_data.username)
+        db.set_user_anketa(user_id=callback_data.user_id, chat_id=callback_data.chat_id, message_id=callback_data.msg_id)
         try:
             await bot.send_message(chat_id=callback_data.user_id, text="🎉 <b>Поздравляем!</b>\n\nВаша регистрация была одобрена.")
         except Exception as e:
@@ -152,9 +191,9 @@ async def handle_decline_callback(query: types.CallbackQuery, callback_data: Reg
         logging.error(f"Не удалось отправить уведомление об отклонении пользователю {callback_data.user_id}: {e}")
     await query.message.edit_text(f"❌ Заявка для @{callback_data.username} <b>ОТКЛОНЕНА</b>\nАдминистратор: @{admin_username}")
     await query.answer("Заявка отклонена.")
+
 # --- ОСНОВНОЙ ФУНКЦИОНАЛ (ЗАЩИЩЕН ФИЛЬТРОМ ОТ БАНА) ---
 
-# Применяем фильтр ко всем последующим обработчикам
 dp.message.filter(IsNotBannedFilter())
 dp.callback_query.filter(IsNotBannedFilter())
 
@@ -169,6 +208,23 @@ async def cancel_dialog(message: types.Message, state: FSMContext):
 async def handle_wallet_button(message: types.Message):
     user_balance = db.get_user_balance(message.from_user.id)
     await message.answer(f"<b>Ваш кошелек</b>\n\n💰 Текущий баланс: <b>{user_balance}</b> золотых монет.")
+
+@dp.message(F.text == "👤 Моя анкета")
+async def handle_my_profile_button(message: types.Message):
+    anketa_data = db.get_user_anketa(message.from_user.id)
+    if anketa_data:
+        chat_id, message_id = anketa_data
+        try:
+            await bot.forward_message(
+                chat_id=message.chat.id,
+                from_chat_id=chat_id,
+                message_id=message_id
+            )
+        except Exception as e:
+            await message.answer("Не удалось найти вашу анкету. Возможно, она была удалена из канала.")
+            logging.error(f"Ошибка пересылки анкеты для {message.from_user.id}: {e}")
+    else:
+        await message.answer("Данные о вашей анкете не найдены. Возможно, вы регистрировались до введения этой функции.")
 
 @dp.message(F.text == "🛍️ Мои товары")
 async def handle_my_items_button(message: types.Message):
@@ -296,6 +352,7 @@ async def handle_buy_callback(query: types.CallbackQuery, callback_data: BuyItem
     except Exception as e:
         logging.error(f"Критическая ошибка во время транзакции для товара {item_id}: {e}")
         await query.answer("❗️ Произошла критическая ошибка.", show_alert=True)
+
 # --- АДМИНИСТРАТИВНЫЕ КОМАНДЫ ---
 
 @dp.message(Command("give"), IsAdminFilter())
@@ -408,28 +465,7 @@ async def remove_admin_command(message: types.Message):
     except (IndexError, ValueError):
         await message.answer("Используйте: /deladmin [ID]")
 
-
 # --- ЗАПУСК БОТА ---
-async def main():
-    db.init_db()
-    # Убедимся, что владелец существует в базе и является админом
-    if not db.user_exists(OWNER_ID):
-        db.add_user(OWNER_ID, "Owner")
-    if not db.is_user_admin(OWNER_ID):
-        db.set_admin(OWNER_ID)
-    
-    logging.info("Бот запускается...")
-    await bot.delete_webhook(drop_pending_updates=True)
-    await dp.start_polling(bot)
-
-# --- Старый код ---
-# if __name__ == "__main__":
-#     try:
-#         asyncio.run(main())
-#     except KeyboardInterrupt:
-#         logging.info("Бот остановлен вручную.")
-
-# --- НОВЫЙ КОД ---
 app = Flask(__name__)
 
 @app.route('/')
@@ -437,7 +473,6 @@ def index():
     return "I am alive!"
 
 def run_flask():
-  # Render предоставляет порт в переменной окружения PORT
   port = int(os.environ.get('PORT', 5000))
   app.run(host='0.0.0.0', port=port)
 
@@ -453,14 +488,10 @@ async def main_async():
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
-    # Запускаем Flask в отдельном потоке
     flask_thread = Thread(target=run_flask)
     flask_thread.start()
     
-    # Запускаем бота
     try:
         asyncio.run(main_async())
     except KeyboardInterrupt:
         logging.info("Бот остановлен вручную.")
-
-
