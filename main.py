@@ -15,6 +15,9 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.exceptions import TelegramBadRequest
 
 import database as db
+from flask import Flask
+from threading import Thread
+import os 
 
 # --- НАСТРОЙКИ БОТА (КОНФИГУРАЦИЯ) ---
 BOT_TOKEN = "8468997703:AAGuhe11JhsTrn0XMb-kHHz1QcRq837IP0M"
@@ -419,8 +422,45 @@ async def main():
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
+# --- Старый код ---
+# if __name__ == "__main__":
+#     try:
+#         asyncio.run(main())
+#     except KeyboardInterrupt:
+#         logging.info("Бот остановлен вручную.")
+
+# --- НОВЫЙ КОД ---
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "I am alive!"
+
+def run_flask():
+  # Render предоставляет порт в переменной окружения PORT
+  port = int(os.environ.get('PORT', 5000))
+  app.run(host='0.0.0.0', port=port)
+
+async def main_async():
+    db.init_db()
+    if not db.user_exists(OWNER_ID):
+        db.add_user(OWNER_ID, "Owner")
+    if not db.is_user_admin(OWNER_ID):
+        db.set_admin(OWNER_ID)
+    
+    logging.info("Бот запускается...")
+    await bot.delete_webhook(drop_pending_updates=True)
+    await dp.start_polling(bot)
+
 if __name__ == "__main__":
+    # Запускаем Flask в отдельном потоке
+    flask_thread = Thread(target=run_flask)
+    flask_thread.start()
+    
+    # Запускаем бота
     try:
-        asyncio.run(main())
+        asyncio.run(main_async())
     except KeyboardInterrupt:
         logging.info("Бот остановлен вручную.")
+
+
