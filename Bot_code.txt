@@ -1,0 +1,1074 @@
+# -*- coding: utf-8 -*-
+
+import asyncio
+import sqlite3
+import sys
+from datetime import datetime
+from typing import Optional
+
+from aiogram import Bot, Dispatcher, F, types
+from aiogram.filters import Command, StateFilter
+from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import State, StatesGroup
+from aiogram.fsm.storage.memory import MemoryStorage
+from aiogram.types import (
+    Message, CallbackQuery, InlineKeyboardMarkup, 
+    InlineKeyboardButton, InputMediaPhoto
+)
+
+# =============================================================================
+#  konfiguratsiya
+# =============================================================================
+
+# !!!ВАЖНО!!! Замените "ВАШ_БОТ_ТОКЕН" на реальный токен вашего бота
+[cite_start]BOT_TOKEN = "8468997703:AAEfT1VN4gBX6LtMt7bkHk4ctZ0stJy5t-E" # [cite: 43]
+
+[cite_start]MARKET_CHANNEL_ID = -1002558702431 # [cite: 43]
+[cite_start]ADMIN_IDS = [5272076117, 1014648750, 6667527307, 7790048968, 1566512661, 5753554084, 6050582147] # [cite: 43]
+
+# =============================================================================
+# Инициализация бота и FSM (машины состояний)
+# =============================================================================
+
+[cite_start]bot = Bot(token=BOT_TOKEN) # [cite: 43]
+[cite_start]storage = MemoryStorage() # [cite: 43]
+[cite_start]dp = Dispatcher(storage=storage) # [cite: 43]
+
+[cite_start]pending_logins = {} # [cite: 43]
+
+# Состояния для добавления товара
+[cite_start]class ItemStates(StatesGroup): # [cite: 43]
+    waiting_for_image = State()
+    waiting_for_name = State()
+    waiting_for_description = State()
+    waiting_for_price = State()
+
+# Состояния для админ-панели
+[cite_start]class AdminStates(StatesGroup): # [cite: 43]
+    waiting_for_user_id = State()
+    waiting_for_amount = State()
+    waiting_for_player_name = State()
+    waiting_for_initial_balance = State()
+
+# =============================================================================
+# Функции для работы с базой данных (SQLite)
+# =============================================================================
+
+[cite_start]def init_db(): # [cite: 44]
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    
+    # Таблица игроков
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS players (
+            user_id INTEGER PRIMARY KEY,
+            player_name TEXT NOT NULL,
+            balance INTEGER DEFAULT 0,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            player_form TEXT
+        )
+    [cite_start]''') # [cite: 44, 45]
+    
+    # Таблица лотов
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS lots (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            seller_id INTEGER,
+            item_name TEXT NOT NULL,
+            item_description TEXT,
+            price INTEGER NOT NULL,
+            image_file_id TEXT,
+            message_id INTEGER,
+            is_sold BOOLEAN DEFAULT FALSE,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (seller_id) REFERENCES players (user_id)
+        )
+    [cite_start]''') # [cite: 46, 47]
+    
+    # Таблица транзакций
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS transactions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            from_user_id INTEGER,
+            to_user_id INTEGER,
+            amount INTEGER,
+            transaction_type TEXT,
+            description TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    [cite_start]''') # [cite: 47, 48]
+    
+    conn.commit()
+    conn.close()
+
+[cite_start]def get_player(user_id: int): # [cite: 48]
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT user_id, player_name, balance, created_at, player_form FROM players WHERE user_id = ?", (user_id,))
+    player = cursor.fetchone()
+    conn.close()
+    [cite_start]return player # [cite: 49]
+
+[cite_start]def add_player(user_id: int, player_name: str, player_form: str, initial_balance: int = 0): # [cite: 49]
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        "INSERT OR REPLACE INTO players (user_id, player_name, balance, player_form) VALUES (?, ?, ?, ?)",
+        (user_id, player_name, initial_balance, player_form)
+    )
+    conn.commit()
+    conn.close()
+
+[cite_start]def update_balance(user_id: int, amount: int): # [cite: 49]
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        "UPDATE players SET balance = balance + ? WHERE user_id = ?",
+        (amount, user_id)
+    [cite_start]) # [cite: 50]
+    conn.commit()
+    conn.close()
+
+[cite_start]def get_player_lots(user_id: int): # [cite: 50]
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT * FROM lots WHERE seller_id = ? AND is_sold = FALSE",
+        (user_id,)
+    )
+    lots = cursor.fetchall()
+    conn.close()
+    return lots
+
+[cite_start]def create_lot(seller_id: int, item_name: str, item_description: str, price: int, image_file_id: str): # [cite: 50, 51]
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        "INSERT INTO lots (seller_id, item_name, item_description, price, image_file_id) VALUES (?, ?, ?, ?, ?)",
+        (seller_id, item_name, item_description, price, image_file_id)
+    )
+    lot_id = cursor.lastrowid
+    conn.commit()
+    conn.close()
+    return lot_id
+
+[cite_start]def get_lot(lot_id: int): # [cite: 51]
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    [cite_start]cursor.execute("SELECT * FROM lots WHERE id = ?", (lot_id,)) # [cite: 52]
+    lot = cursor.fetchone()
+    conn.close()
+    return lot
+
+[cite_start]def mark_lot_sold(lot_id: int): # [cite: 52]
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    cursor.execute("UPDATE lots SET is_sold = TRUE WHERE id = ?", (lot_id,))
+    conn.commit()
+    conn.close()
+
+[cite_start]def delete_lot(lot_id: int): # [cite: 52]
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM lots WHERE id = ?", (lot_id,))
+    conn.commit()
+    conn.close()
+
+[cite_start]def add_transaction(from_user_id: int, to_user_id: int, amount: int, transaction_type: str, description: str): # [cite: 52]
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        "INSERT INTO transactions (from_user_id, to_user_id, amount, transaction_type, description) VALUES (?, ?, ?, ?, ?)",
+        (from_user_id, to_user_id, amount, transaction_type, description)
+    [cite_start]) # [cite: 53]
+    conn.commit()
+    conn.close()
+
+[cite_start]def update_lot_message_id(lot_id: int, message_id: int): # [cite: 53]
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    [cite_start]cursor.execute("UPDATE lots SET message_id = ? WHERE id = ?", (message_id, lot_id)) # [cite: 54]
+    conn.commit()
+    conn.close()
+
+# =============================================================================
+# Вспомогательные функции и клавиатуры
+# =============================================================================
+
+[cite_start]def is_admin(user_id: int) -> bool: # [cite: 54]
+    return user_id in ADMIN_IDS
+
+[cite_start]def format_number(num: int) -> str: # [cite: 54]
+    return f"{num:,}".replace(",", " ")
+
+# Клавиатуры
+[cite_start]def get_main_menu(): # [cite: 54]
+    return InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="💰 Мой кошелек", callback_data="wallet")],
+        [InlineKeyboardButton(text="🛍 Мои лоты", callback_data="my_lots")],
+        [InlineKeyboardButton(text="➕ Добавить товар", callback_data="add_item")],
+    ])
+
+[cite_start]def get_admin_menu(): # [cite: 54]
+    return InlineKeyboardMarkup(inline_keyboard=[
+        [cite_start][InlineKeyboardButton(text="👤 Добавить игрока", callback_data="admin_add_player")], # [cite: 55]
+        [InlineKeyboardButton(text="💰 Пополнить баланс", callback_data="admin_add_money")],
+        [InlineKeyboardButton(text="💸 Списать баланс", callback_data="admin_remove_money")],
+        [InlineKeyboardButton(text="📊 Баланс игрока", callback_data="admin_check_balance")],
+        [InlineKeyboardButton(text="📈 Статистика", callback_data="admin_stats")],
+        [InlineKeyboardButton(text="🔙 Назад", callback_data="main_menu")]
+    ])
+
+[cite_start]def mod_keyboard(user_id): # [cite: 55]
+    return InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="✅ Подтвердить", callback_data=f"approve_{user_id}")],
+        [InlineKeyboardButton(text="❌ Отклонить", callback_data=f"deny_{user_id}")]
+    [cite_start]]) # [cite: 56]
+
+# =============================================================================
+# Установка команд бота
+# =============================================================================
+
+[cite_start]async def set_commands(): # [cite: 56]
+    basic_commands = [
+        types.BotCommand(command="start", description="📝 Регистрация"),
+        types.BotCommand(command="menu", description="🏰 Главное меню"),
+        types.BotCommand(command="wallet", description="💰 Мой кошелек"),
+        types.BotCommand(command="lots", description="🛍 Мои лоты"),
+        types.BotCommand(command="add", description="➕ Добавить товар"),
+        types.BotCommand(command="myform", description="📋 Моя анкета"),
+        [cite_start]types.BotCommand(command="help", description="❓ Помощь"), # [cite: 57]
+        types.BotCommand(command="cancel", description="🔄 Отменить действие"),
+        types.BotCommand(command="logout", description="🚪 Выйти из аккаунта"),
+    ]
+    await bot.set_my_commands(basic_commands)
+
+    admin_commands = basic_commands + [
+        types.BotCommand(command="admin", description="🔧 Панель администратора"),
+        types.BotCommand(command="addplayer", description="👤 Добавить игрока"),
+        types.BotCommand(command="addmoney", description="💰 Пополнить баланс"),
+        types.BotCommand(command="removemoney", description="💸 Списать баланс"),
+        [cite_start]types.BotCommand(command="checkbalance", description="📊 Проверить баланс"), # [cite: 59]
+        types.BotCommand(command="stats", description="📈 Статистика системы"),
+    [cite_start]] # [cite: 58]
+    
+    for admin_id in ADMIN_IDS:
+        try:
+            await bot.set_my_commands(
+                admin_commands,
+                scope=types.BotCommandScopeChat(chat_id=admin_id)
+            [cite_start]) # [cite: 60]
+        except Exception as e:
+            print(f"Ошибка установки команд для админа {admin_id}: {e}")
+            continue
+
+# =============================================================================
+# Обработчики команд
+# =============================================================================
+
+@dp.message(Command("start"))
+[cite_start]async def cmd_start(message: Message): # [cite: 60]
+    player = get_player(message.from_user.id)
+    
+    if player:
+        await message.answer(
+            "❌ Вы уже зарегистрированы в системе!\n"
+            [cite_start]"Используйте /menu для входа в главное меню." # [cite: 61]
+        )
+        return
+    
+    await message.answer(
+        "👋 Добро пожаловать в рынок Вестероса!\n\n"
+        "❗️ Для регистрации отправьте анкету с информацией о вашем персонаже:\n"
+        "• Имя персонажа\n"
+        "• Возраст\n"
+        "• Краткая биография\n"
+        [cite_start]"• Род деятельности\n\n" # [cite: 62]
+        "📝 Пожалуйста, отправьте всю информацию одним сообщением."
+    )
+
+@dp.message(Command("logout"))
+[cite_start]async def cmd_logout(message: Message): # [cite: 62]
+    if not get_player(message.from_user.id):
+        await message.answer("❌ Вы не зарегистрированы в системе!")
+        return
+    
+    [cite_start]conn = sqlite3.connect('rp_market.db') # [cite: 63]
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM lots WHERE seller_id = ?", (message.from_user.id,))
+    [cite_start]cursor.execute("DELETE FROM transactions WHERE from_user_id = ? OR to_user_id = ?", (message.from_user.id, message.from_user.id)) # [cite: 64]
+    cursor.execute("DELETE FROM players WHERE user_id = ?", (message.from_user.id,))
+    conn.commit()
+    conn.close()
+    
+    if message.from_user.id in pending_logins:
+        del pending_logins[message.from_user.id]
+    
+    await message.answer(
+        "✅ Вы успешно вышли из системы!\n"
+        "Все ваши данные, лоты и транзакции удалены.\n"
+        [cite_start]"Для повторной регистрации используйте /start" # [cite: 65]
+    )
+
+@dp.message(Command("menu"))
+[cite_start]async def cmd_menu(message: Message): # [cite: 65]
+    player = get_player(message.from_user.id)
+    
+    if not player:
+        await message.answer(
+            "❌ Вы не зарегистрированы в системе!\n"
+            [cite_start]"Используйте /start для регистрации." # [cite: 66]
+        )
+        return
+    
+    if not player[4]:
+        await message.answer(
+            "❌ Для доступа к меню необходимо иметь одобренную анкету!\n"
+            "Отправьте анкету и дождитесь одобрения."
+        )
+        return
+    
+    await message.answer(
+        f"🏰 Рынок Вестероса\n\n"
+        f"👤 {player[1]}\n"
+        f"💰 Баланс: {format_number(player[2])} золотых монет\n\n"
+        "Выберите действие:",
+        reply_markup=get_main_menu()
+    [cite_start]) # [cite: 67]
+
+@dp.message(Command("wallet"))
+[cite_start]async def cmd_wallet(message: Message): # [cite: 67]
+    player = get_player(message.from_user.id)
+    
+    if not player:
+        await message.answer(
+            "❌ Вы не зарегистрированы в системе!\n"
+            [cite_start]"Используйте /start для регистрации." # [cite: 68]
+        )
+        return
+    
+    await message.answer(f"💰 Ваш баланс: {format_number(player[2])} золотых монет")
+
+@dp.message(Command("add"))
+[cite_start]async def cmd_add(message: Message, state: FSMContext): # [cite: 68]
+    player = get_player(message.from_user.id)
+    
+    if not player:
+        [cite_start]await message.answer("❌ Вы не зарегистрированы в системе!\nИспользуйте /start для регистрации.") # [cite: 69]
+        return
+    
+    if not player[4]:
+        [cite_start]await message.answer("❌ Для добавления товаров необходимо иметь одобренную анкету!") # [cite: 69]
+        return
+    
+    [cite_start]lots = get_player_lots(message.from_user.id) # [cite: 70]
+    if len(lots) >= 5:
+        await message.answer(
+            "❌ У вас уже максимальное количество активных лотов (5)!\n"
+            "Дождитесь продажи или снимите существующие лоты."
+        )
+        return
+    
+    [cite_start]await message.answer("📸 Отправьте фотографию товара:") # [cite: 71]
+    await state.set_state(ItemStates.waiting_for_image)
+
+@dp.message(Command("myform"))
+[cite_start]async def cmd_myform(message: Message): # [cite: 81]
+    player = get_player(message.from_user.id)
+    if not player:
+        [cite_start]await message.answer("❌ Вы не зарегистрированы в системе!\nИспользуйте /start для регистрации.") # [cite: 81]
+        return
+    
+    if not player[4]:
+        await message.answer(
+            "❌ Ваша анкета не найдена или еще не одобрена.\n"
+            [cite_start]"Если вы еще не отправляли анкету, просто напишите ее в чат." # [cite: 82]
+        )
+        return
+    
+    [cite_start]await message.answer(f"📝 Ваша текущая одобренная анкета:\n\n{player[4]}") # [cite: 83]
+
+@dp.message(Command("cancel"))
+[cite_start]async def cmd_cancel(message: Message, state: FSMContext): # [cite: 83]
+    current_state = await state.get_state()
+    if current_state is not None:
+        await state.clear()
+        await message.answer(
+            "🔄 Действие отменено. Используйте /menu для входа в меню",
+            reply_markup=types.ReplyKeyboardRemove()
+        [cite_start]) # [cite: 84]
+    else:
+        await message.answer("❌ Нет активных действий для отмены")
+
+@dp.message(Command("help"))
+[cite_start]async def cmd_help(message: Message): # [cite: 79]
+    help_text = (
+        "🔹 <b>Основные команды:</b>\n"
+        "/start - Регистрация в системе\n"
+        "/menu - Открыть главное меню\n"
+        "/wallet - Посмотреть баланс\n"
+        [cite_start]"/lots - Просмотр ваших лотов\n" # [cite: 80]
+        "/add - Добавить товар на продажу\n"
+        "/myform - Посмотреть свою анкету\n"
+        "/help - Показать это сообщение\n"
+        "/cancel - Отменить текущее действие\n\n"
+        "🔸 <b>Правила торговли:</b>\n"
+        "• Максимум 5 активных лотов\n"
+        [cite_start]"• Нельзя покупать свои товары\n\n" # [cite: 81]
+        "По всем вопросам обращайтесь к администраторам."
+    )
+    await message.answer(help_text, parse_mode="HTML")
+
+# =============================================================================
+# Обработчики команд администратора
+# =============================================================================
+
+@dp.message(Command("admin"))
+[cite_start]async def cmd_admin(message: Message): # [cite: 71]
+    if not is_admin(message.from_user.id):
+        await message.answer("❌ У вас нет прав администратора!")
+        return
+    await message.answer("🔧 Панель администратора:", reply_markup=get_admin_menu())
+
+@dp.message(Command("addplayer"))
+[cite_start]async def cmd_addplayer(message: Message, state: FSMContext): # [cite: 71]
+    if not is_admin(message.from_user.id):
+        [cite_start]await message.answer("❌ У вас нет прав администратора!") # [cite: 72]
+        return
+    await message.answer("👤 Введите ID пользователя:")
+    await state.set_state(AdminStates.waiting_for_user_id)
+
+@dp.message(Command("addmoney"))
+[cite_start]async def cmd_addmoney(message: Message, state: FSMContext): # [cite: 72]
+    if not is_admin(message.from_user.id):
+        await message.answer("❌ У вас нет прав администратора!")
+        return
+    await message.answer("👤 Введите ID пользователя для пополнения баланса:")
+    await state.set_state(AdminStates.waiting_for_user_id)
+    await state.update_data(action="add_money")
+
+@dp.message(Command("removemoney"))
+[cite_start]async def cmd_removemoney(message: Message, state: FSMContext): # [cite: 72]
+    if not is_admin(message.from_user.id):
+        [cite_start]await message.answer("❌ У вас нет прав администратора!") # [cite: 73]
+        return
+    await message.answer("👤 Введите ID пользователя для списания баланса:")
+    await state.set_state(AdminStates.waiting_for_user_id)
+    await state.update_data(action="remove_money")
+
+@dp.message(Command("checkbalance"))
+[cite_start]async def cmd_checkbalance(message: Message): # [cite: 73]
+    if not is_admin(message.from_user.id):
+        await message.answer("❌ У вас нет прав администратора!")
+        return
+    
+    [cite_start]args = message.text.split() # [cite: 74]
+    if len(args) < 2:
+        await message.answer("❌ Использование: /checkbalance <user_id>")
+        return
+    
+    try:
+        user_id = int(args[1])
+        player = get_player(user_id)
+        if not player:
+            [cite_start]await message.answer(f"❌ Игрок с ID {user_id} не найден!") # [cite: 74]
+            return
+        
+        await message.answer(
+            f"📊 Информация об игроке:\n"
+            f"👤 ID: {user_id}\n"
+            f"🎭 Имя: {player[1]}\n"
+            f"💰 Баланс: {format_number(player[2])} монет\n"
+            f"📅 Регистрация: {player[3]}\n"
+            [cite_start]f"📝 Анкета: {'✅ Есть' if player[4] else '❌ Нет'}" # [cite: 76]
+        [cite_start]) # [cite: 75]
+    except ValueError:
+        await message.answer("❌ Неверный формат ID пользователя!")
+
+@dp.message(Command("stats"))
+[cite_start]async def cmd_stats(message: Message): # [cite: 76]
+    if not is_admin(message.from_user.id):
+        await message.answer("❌ У вас нет прав администратора!")
+        return
+    
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    
+    [cite_start]cursor.execute("SELECT COUNT(*) FROM players") # [cite: 77]
+    total_players = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM players WHERE player_form IS NOT NULL")
+    players_with_forms = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM lots WHERE is_sold = FALSE")
+    active_lots = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM lots WHERE is_sold = TRUE")
+    sold_lots = cursor.fetchone()[0]
+    [cite_start]cursor.execute("SELECT SUM(balance) FROM players") # [cite: 78]
+    total_balance = cursor.fetchone()[0] or 0
+    cursor.execute("SELECT COUNT(*) FROM transactions")
+    total_transactions = cursor.fetchone()[0]
+    conn.close()
+    
+    await message.answer(
+        f"📈 Статистика системы:\n\n"
+        f"👥 Всего игроков: {total_players}\n"
+        f"📝 С анкетами: {players_with_forms}\n"
+        [cite_start]f"🛍 Активных лотов: {active_lots}\n" # [cite: 79]
+        f"✅ Проданных лотов: {sold_lots}\n"
+        f"💰 Общий баланс: {format_number(total_balance)} монет\n"
+        f"💸 Всего транзакций: {total_transactions}"
+    )
+
+# =============================================================================
+# Обработчики Callback-запросов (нажатий на кнопки)
+# =============================================================================
+
+@dp.callback_query(F.data == "main_menu")
+[cite_start]async def callback_main_menu(callback: CallbackQuery): # [cite: 105]
+    player = get_player(callback.from_user.id)
+    if not player:
+        await callback.answer("Ошибка: пользователь не найден")
+        return
+    
+    await callback.message.edit_text(
+        f"🏰 Рынок Вестероса\n\n"
+        f"👤 {player[1]}\n"
+        [cite_start]f"💰 Баланс: {format_number(player[2])} золотых монет\n\n" # [cite: 106]
+        "Выберите действие:",
+        reply_markup=get_main_menu()
+    )
+    await callback.answer()
+
+@dp.callback_query(F.data == "wallet")
+[cite_start]async def callback_wallet(callback: CallbackQuery): # [cite: 102, 103]
+    player = get_player(callback.from_user.id)
+    if not player:
+        await callback.answer("Ошибка: пользователь не найден")
+        return
+    
+    await callback.message.edit_text(
+        f"💰 Ваш баланс: {format_number(player[2])} золотых монет",
+        reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="🔙 Назад", callback_data="main_menu")]
+        ])
+    )
+    await callback.answer()
+
+@dp.callback_query(F.data == "my_lots")
+[cite_start]async def callback_my_lots(callback: CallbackQuery): # [cite: 103]
+    [cite_start]lots = get_player_lots(callback.from_user.id) # [cite: 104]
+    
+    text = "🛍 Ваши активные лоты:\n\n" if lots else "🛍 У вас нет активных лотов"
+    if lots:
+        for lot in lots:
+            text += f"📦 {lot[2]} - {format_number(lot[4])} монет\n"
+    
+    await callback.message.edit_text(
+        text,
+        reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="🔙 Назад", callback_data="main_menu")]
+        [cite_start]]) # [cite: 105]
+    )
+    await callback.answer()
+
+@dp.callback_query(F.data == "add_item")
+[cite_start]async def callback_add_item(callback: CallbackQuery, state: FSMContext): # [cite: 1]
+    player = get_player(callback.from_user.id)
+    
+    if not player[4]:
+        await callback.answer("Необходима одобренная анкета!")
+        return
+    
+    lots = get_player_lots(callback.from_user.id)
+    if len(lots) >= 5:
+        await callback.message.edit_text(
+            [cite_start]"❌ У вас уже максимальное количество активных лотов (5)!\n" # [cite: 2]
+            "Дождитесь продажи или снимите существующие лоты.",
+            reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+                [InlineKeyboardButton(text="🔙 Назад", callback_data="main_menu")]
+            ])
+        )
+        await callback.answer()
+        return
+    
+    [cite_start]await callback.message.edit_text("📸 Отправьте фотографию товара:") # [cite: 3]
+    await state.set_state(ItemStates.waiting_for_image)
+    await callback.answer()
+
+# ----------------- Процесс покупки -----------------
+
+@dp.callback_query(F.data.startswith("buy_"))
+[cite_start]async def handle_buy(callback: CallbackQuery): # [cite: 23]
+    lot_id = int(callback.data.split("_")[1])
+    buyer_id = callback.from_user.id
+    
+    lot = get_lot(lot_id)
+    if not lot:
+        [cite_start]await callback.answer("❌ Лот не найден!") # [cite: 23]
+        return
+    
+    if lot[7]:
+        [cite_start]await callback.answer("❌ Товар уже продан!") # [cite: 24]
+        return
+    
+    if buyer_id == lot[1]:
+        await callback.answer("❌ Нельзя покупать свои товары!")
+        return
+    
+    [cite_start]buyer = get_player(buyer_id) # [cite: 25]
+    if not buyer:
+        await callback.answer("❌ Вы не зарегистрированы в системе!")
+        return
+    
+    if not buyer[4]:
+        await callback.answer("❌ Необходима одобренная анкета для покупок!")
+        return
+    
+    if buyer[2] < lot[4]:
+        [cite_start]await callback.answer(f"❌ Недостаточно средств! Нужно: {format_number(lot[4])} монет") # [cite: 26]
+        return
+    
+    # Проведение транзакции
+    seller = get_player(lot[1])
+    update_balance(buyer_id, -lot[4])
+    update_balance(lot[1], lot[4])
+    mark_lot_sold(lot_id)
+    [cite_start]add_transaction(buyer_id, lot[1], lot[4], "purchase", f"Покупка товара: {lot[2]}") # [cite: 27]
+    
+    # Уведомления участникам
+    try:
+        [cite_start]await bot.send_message(buyer_id, f"✅ Покупка успешна!\n📦 Товар: {lot[2]}\n💰 Сумма: {format_number(lot[4])} монет\n👤 Продавец: {seller[1]}") # [cite: 28]
+    except: pass
+    try:
+        [cite_start]await bot.send_message(lot[1], f"🎉 Ваш товар продан!\n📦 Товар: {lot[2]}\n💰 Сумма: {format_number(lot[4])} монет\n👤 Покупатель: {buyer[1]}") # [cite: 29]
+    except: pass
+
+    # Обновление сообщения в канале
+    try:
+        new_caption = callback.message.caption + "\n\n🔴 **ПРОДАНО**"
+        [cite_start]await callback.message.edit_caption(caption=new_caption, reply_markup=None, parse_mode="Markdown") # [cite: 30]
+    except: pass
+    
+    await callback.answer("✅ Покупка успешна!")
+
+# ----------------- Админ-панель: Callbacks -----------------
+
+@dp.callback_query(F.data == "admin_menu")
+[cite_start]async def callback_admin_menu(callback: CallbackQuery): # [cite: 20]
+    if not is_admin(callback.from_user.id):
+        [cite_start]await callback.answer("У вас нет прав администратора!") # [cite: 21]
+        return
+    await callback.message.edit_text("🔧 Панель администратора:", reply_markup=get_admin_menu())
+    await callback.answer()
+
+@dp.callback_query(F.data == "admin_add_player")
+[cite_start]async def callback_admin_add_player(callback: CallbackQuery, state: FSMContext): # [cite: 12]
+    if not is_admin(callback.from_user.id):
+        await callback.answer("У вас нет прав администратора!")
+        return
+    await callback.message.edit_text("👤 Введите ID пользователя:")
+    [cite_start]await state.set_state(AdminStates.waiting_for_user_id) # [cite: 13]
+    await callback.answer()
+
+@dp.callback_query(F.data == "admin_add_money")
+[cite_start]async def callback_admin_add_money(callback: CallbackQuery, state: FSMContext): # [cite: 13]
+    if not is_admin(callback.from_user.id):
+        await callback.answer("У вас нет прав администратора!")
+        return
+    await callback.message.edit_text("👤 Введите ID пользователя для пополнения баланса:")
+    await state.set_state(AdminStates.waiting_for_user_id)
+    await state.update_data(action="add_money")
+    await callback.answer()
+
+@dp.callback_query(F.data == "admin_remove_money")
+[cite_start]async def callback_admin_remove_money(callback: CallbackQuery, state: FSMContext): # [cite: 13]
+    if not is_admin(callback.from_user.id):
+        await callback.answer("У вас нет прав администратора!")
+        [cite_start]return # [cite: 14]
+    await callback.message.edit_text("👤 Введите ID пользователя для списания баланса:")
+    await state.set_state(AdminStates.waiting_for_user_id)
+    await state.update_data(action="remove_money")
+    await callback.answer()
+
+@dp.callback_query(F.data == "admin_check_balance")
+[cite_start]async def callback_admin_check_balance(callback: CallbackQuery): # [cite: 14]
+    if not is_admin(callback.from_user.id):
+        await callback.answer("У вас нет прав администратора!")
+        return
+    await callback.message.edit_text(
+        [cite_start]"📊 Для проверки баланса используйте команду:\n/checkbalance <user_id>\n\nНапример: /checkbalance 123456789", # [cite: 15]
+        reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 Назад", callback_data="admin_menu")]])
+    )
+    await callback.answer()
+
+@dp.callback_query(F.data == "admin_stats")
+[cite_start]async def callback_admin_stats(callback: CallbackQuery): # [cite: 15]
+    if not is_admin(callback.from_user.id):
+        await callback.answer("У вас нет прав администратора!")
+        return
+    
+    conn = sqlite3.connect('rp_market.db')
+    cursor = conn.cursor()
+    [cite_start]cursor.execute("SELECT COUNT(*) FROM players") # [cite: 16]
+    total_players = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM players WHERE player_form IS NOT NULL")
+    players_with_forms = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM lots WHERE is_sold = FALSE")
+    active_lots = cursor.fetchone()[0]
+    [cite_start]cursor.execute("SELECT COUNT(*) FROM lots WHERE is_sold = TRUE") # [cite: 17]
+    sold_lots = cursor.fetchone()[0]
+    cursor.execute("SELECT SUM(balance) FROM players")
+    total_balance = cursor.fetchone()[0] or 0
+    cursor.execute("SELECT COUNT(*) FROM transactions")
+    total_transactions = cursor.fetchone()[0]
+    cursor.execute("SELECT player_name, balance FROM players ORDER BY balance DESC LIMIT 3")
+    top_players = cursor.fetchall()
+    conn.close()
+    
+    [cite_start]top_text = "" # [cite: 18]
+    for i, (name, balance) in enumerate(top_players, 1):
+        [cite_start]top_text += f"{i}. {name}: {format_number(balance)} монет\n" # [cite: 19]
+    
+    stats_text = (
+        f"📈 Статистика системы:\n\n"
+        f"👥 Всего игроков: {total_players}\n"
+        f"📝 С анкетами: {players_with_forms}\n"
+        f"🛍 Активных лотов: {active_lots}\n"
+        f"✅ Проданных лотов: {sold_lots}\n"
+        f"💰 Общий баланс: {format_number(total_balance)} монет\n"
+        f"💸 Всего транзакций: {total_transactions}\n\n"
+        [cite_start]f"🏆 Топ игроков по балансу:\n{top_text}" # [cite: 20]
+    )
+    
+    await callback.message.edit_text(
+        stats_text,
+        reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="🔄 Обновить", callback_data="admin_stats")],
+            [InlineKeyboardButton(text="🔙 Назад", callback_data="admin_menu")]
+        ])
+    )
+    await callback.answer()
+
+# ----------------- Админ: подтверждение анкет -----------------
+
+@dp.callback_query(F.data.startswith("approve_"))
+[cite_start]async def approve_login(callback: CallbackQuery): # [cite: 95]
+    if not is_admin(callback.from_user.id):
+        await callback.answer("У вас нет прав для этого действия")
+        [cite_start]return # [cite: 96]
+    
+    user_id = int(callback.data.split("_")[1])
+    if user_id not in pending_logins:
+        await callback.answer("Анкета уже обработана или не найдена")
+        return
+    
+    player_form = pending_logins[user_id]
+    player_name = player_form.split('\n')[0].strip()
+    
+    player = get_player(user_id)
+    if player:
+        [cite_start]conn = sqlite3.connect('rp_market.db') # [cite: 97]
+        cursor = conn.cursor()
+        [cite_start]cursor.execute("UPDATE players SET player_form = ? WHERE user_id = ?", (player_form, user_id)) # [cite: 98]
+        conn.commit()
+        conn.close()
+        try:
+            [cite_start]await bot.send_message(user_id, "✅ Ваша анкета обновлена!\nИспользуйте /menu для входа в меню.") # [cite: 99]
+        except: pass
+    else:
+        add_player(user_id, player_name, player_form, 0)
+        try:
+            [cite_start]await bot.send_message(user_id, "✅ Ваша регистрация подтверждена!\nИспользуйте /menu для входа в систему.") # [cite: 100]
+        except: pass
+    
+    del pending_logins[user_id]
+    [cite_start]await callback.message.edit_text(callback.message.text + "\n\n✅ ПОДТВЕРЖДЕНО") # [cite: 101]
+    await callback.answer("Анкета подтверждена")
+
+@dp.callback_query(F.data.startswith("deny_"))
+[cite_start]async def deny_login(callback: CallbackQuery): # [cite: 101]
+    if not is_admin(callback.from_user.id):
+        await callback.answer("У вас нет прав для этого действия")
+        return
+    
+    user_id = int(callback.data.split("_")[1])
+    if user_id not in pending_logins:
+        await callback.answer("Анкета уже обработана или не найдена")
+        return
+    
+    try:
+        [cite_start]await bot.send_message(user_id, "❌ Ваша анкета отклонена.\nПопробуйте отправить новую, более подробную анкету.") # [cite: 102]
+    except: pass
+    
+    del pending_logins[user_id]
+    await callback.message.edit_text(callback.message.text + "\n\n❌ ОТКЛОНЕНО")
+    await callback.answer("Анкета отклонена")
+
+
+# =============================================================================
+# Обработчики сообщений в состояниях (FSM)
+# =============================================================================
+
+# ----------------- Процесс добавления товара -----------------
+
+@dp.message(StateFilter(ItemStates.waiting_for_image), F.photo)
+[cite_start]async def handle_item_image(message: Message, state: FSMContext): # [cite: 3]
+    photo = message.photo[-1]
+    await state.update_data(image_file_id=photo.file_id)
+    await message.answer("📝 Введите название товара:")
+    await state.set_state(ItemStates.waiting_for_name)
+
+@dp.message(StateFilter(ItemStates.waiting_for_name), F.text)
+[cite_start]async def handle_item_name(message: Message, state: FSMContext): # [cite: 3]
+    await state.update_data(item_name=message.text)
+    await message.answer("📋 Введите описание товара:")
+    await state.set_state(ItemStates.waiting_for_description)
+
+@dp.message(StateFilter(ItemStates.waiting_for_description), F.text)
+[cite_start]async def handle_item_description(message: Message, state: FSMContext): # [cite: 3]
+    [cite_start]await state.update_data(item_description=message.text) # [cite: 4]
+    await message.answer("💰 Введите цену товара (только число):")
+    await state.set_state(ItemStates.waiting_for_price)
+
+@dp.message(StateFilter(ItemStates.waiting_for_price), F.text)
+[cite_start]async def handle_item_price(message: Message, state: FSMContext): # [cite: 4]
+    try:
+        price = int(message.text)
+        if price <= 0:
+            await message.answer("❌ Цена должна быть положительным числом!")
+            return
+        
+        [cite_start]data = await state.get_data() # [cite: 5]
+        
+        lot_id = create_lot(message.from_user.id, data['item_name'], data['item_description'], price, data['image_file_id'])
+        
+        [cite_start]player = get_player(message.from_user.id) # [cite: 6]
+        caption = (
+            f"🛍 **{data['item_name']}**\n\n"
+            f"📋 {data['item_description']}\n\n"
+            f"💰 Цена: {format_number(price)} золотых монет\n"
+            f"👤 Продавец: {player[1]}\n\n"
+            [cite_start]f"🆔 Лот #{lot_id}" # [cite: 7]
+        )
+        
+        keyboard = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="💰 Купить", callback_data=f"buy_{lot_id}")]])
+        
+        try:
+            sent_message = await bot.send_photo(
+                [cite_start]MARKET_CHANNEL_ID, # [cite: 8]
+                data['image_file_id'],
+                caption=caption,
+                reply_markup=keyboard,
+                parse_mode="Markdown"
+            )
+            [cite_start]update_lot_message_id(lot_id, sent_message.message_id) # [cite: 9]
+            
+            await message.answer(
+                f"✅ Товар успешно добавлен на рынок!\n🆔 Номер лота: {lot_id}",
+                [cite_start]reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 В меню", callback_data="main_menu")]]) # [cite: 10]
+            )
+        except Exception as e:
+            print(f"Ошибка отправки в канал: {e}")
+            await message.answer("❌ Ошибка при публикации товара в канале!")
+        
+        [cite_start]await state.clear() # [cite: 11]
+        
+    except ValueError:
+        await message.answer("❌ Введите корректную сумму!")
+
+# ----------------- Админ-панель: FSM -----------------
+
+@dp.message(StateFilter(AdminStates.waiting_for_user_id), F.text)
+[cite_start]async def handle_admin_user_id(message: Message, state: FSMContext): # [cite: 30]
+    if not is_admin(message.from_user.id):
+        await state.clear()
+        return
+    
+    try:
+        user_id = int(message.text)
+        data = await state.get_data()
+        [cite_start]action = data.get("action") # [cite: 31]
+        
+        if action == "add_money" or action == "remove_money":
+            await state.update_data(target_user_id=user_id)
+            prompt = "Введите сумму для пополнения:" if action == "add_money" else "Введите сумму для списания:"
+            [cite_start]await message.answer(prompt) # [cite: 32]
+            await state.set_state(AdminStates.waiting_for_amount)
+        else: # Добавление игрока
+            await state.update_data(target_user_id=user_id)
+            await message.answer("👤 Введите имя игрока:")
+            await state.set_state(AdminStates.waiting_for_player_name)
+            
+    except ValueError:
+        [cite_start]await message.answer("❌ Введите корректный ID пользователя!") # [cite: 33]
+
+@dp.message(StateFilter(AdminStates.waiting_for_amount), F.text)
+[cite_start]async def handle_admin_amount(message: Message, state: FSMContext): # [cite: 33]
+    if not is_admin(message.from_user.id):
+        await state.clear()
+        return
+    
+    try:
+        amount = int(message.text)
+        data = await state.get_data()
+        user_id = data["target_user_id"]
+        action = data.get("action")
+        
+        [cite_start]player = get_player(user_id) # [cite: 34]
+        if not player:
+            await message.answer(f"❌ Игрок с ID {user_id} не найден!")
+            await state.clear()
+            return
+        
+        if action == "remove_money":
+            [cite_start]amount = -amount # [cite: 35]
+        
+        update_balance(user_id, amount)
+        
+        desc = f"Административная операция: {'пополнение' if amount > 0 else 'списание'}"
+        [cite_start]add_transaction(message.from_user.id, user_id, abs(amount), "admin_op", desc) # [cite: 36]
+        
+        operation = "пополнен" if amount > 0 else "списан"
+        await message.answer(f"✅ Баланс игрока {player[1]} {operation} на {format_number(abs(amount))} монет!")
+        
+        try:
+            [cite_start]await bot.send_message(user_id, f"💰 Ваш баланс {'пополнен' if amount > 0 else 'списан'} администратором на {format_number(abs(amount))} монет") # [cite: 37]
+        except: pass
+        
+        await state.clear()
+        
+    except ValueError:
+        [cite_start]await message.answer("❌ Введите корректную сумму!") # [cite: 38]
+
+@dp.message(StateFilter(AdminStates.waiting_for_player_name), F.text)
+[cite_start]async def handle_admin_player_name(message: Message, state: FSMContext): # [cite: 38]
+    if not is_admin(message.from_user.id):
+        await state.clear()
+        return
+    await state.update_data(player_name=message.text)
+    await message.answer("💰 Введите начальный баланс:")
+    await state.set_state(AdminStates.waiting_for_initial_balance)
+
+@dp.message(StateFilter(AdminStates.waiting_for_initial_balance), F.text)
+[cite_start]async def handle_admin_initial_balance(message: Message, state: FSMContext): # [cite: 38]
+    if not is_admin(message.from_user.id):
+        await state.clear()
+        [cite_start]return # [cite: 39]
+
+    try:
+        balance = int(message.text)
+        if balance < 0:
+            await message.answer("❌ Баланс не может быть отрицательным!")
+            return
+            
+        data = await state.get_data()
+        add_player(data["target_user_id"], data["player_name"], "Добавлен администратором", balance)
+
+        [cite_start]await message.answer(f"✅ Игрок {data['player_name']} добавлен с балансом {format_number(balance)} монет!") # [cite: 40]
+        
+        try:
+            await bot.send_message(
+                data["target_user_id"],
+                f"✅ Вы были добавлены в систему администратором!\n"
+                f"👤 Имя: {data['player_name']}\n"
+                f"💰 Баланс: {format_number(balance)} монет\n"
+                [cite_start]f"Используйте /menu для входа в систему." # [cite: 42]
+            [cite_start]) # [cite: 41]
+        except: pass
+        
+        await state.clear()
+
+    except ValueError:
+        await message.answer("❌ Введите корректную сумму!")
+
+# ----------------- Обработка некорректного ввода в состояниях -----------------
+
+@dp.message(StateFilter(ItemStates.waiting_for_image))
+[cite_start]async def handle_wrong_image(message: Message): # [cite: 11]
+    await message.answer("❌ Пожалуйста, отправьте фотографию товара!")
+
+@dp.message(StateFilter(ItemStates.waiting_for_name))
+async def handle_wrong_name(message: Message):
+    await message.answer("❌ Пожалуйста, введите название товара текстом!")
+
+@dp.message(StateFilter(ItemStates.waiting_for_description))
+async def handle_wrong_description(message: Message):
+    await message.answer("❌ Пожалуйста, введите описание товара текстом!")
+
+@dp.message(StateFilter(ItemStates.waiting_for_price))
+async def handle_wrong_price(message: Message):
+    await message.answer("❌ Пожалуйста, введите цену товара числом!")
+
+# =============================================================================
+# Обработка анкет и прочих текстовых сообщений
+# =============================================================================
+
+@dp.message(F.text & ~F.text.startswith('/'))
+[cite_start]async def handle_text_message(message: Message): # [cite: 84]
+    user_id = message.from_user.id
+    player = get_player(user_id)
+    
+    # Если анкета уже на рассмотрении
+    if user_id in pending_logins:
+        await message.answer("Пожалуйста, ожидайте рассмотрения вашей предыдущей анкеты.")
+        return
+
+    # Если пользователь зарегистрирован и имеет анкету, это обычное сообщение
+    if player and player[4]:
+        [cite_start]await message.answer("ℹ️ Для взаимодействия с ботом используйте команды, например /menu.") # [cite: 23]
+        return
+
+    # Обработка новой анкеты
+    [cite_start]pending_logins[user_id] = message.text # [cite: 85]
+    admin_message = (
+        f"📝 Новая анкета на рассмотрение\n\n"
+        f"От пользователя: {message.from_user.full_name} (@{message.from_user.username})\n"
+        f"ID: {user_id}\n\n"
+        f"📋 Текст анкеты:\n{message.text}"
+    [cite_start]) # [cite: 86]
+    
+    sent_to_admins = False
+    for admin_id in ADMIN_IDS:
+        try:
+            [cite_start]await bot.send_message(admin_id, admin_message, reply_markup=mod_keyboard(user_id)) # [cite: 87]
+            sent_to_admins = True
+        except Exception as e:
+            print(f"Ошибка отправки админу {admin_id}: {e}")
+            [cite_start]continue # [cite: 88]
+    
+    if sent_to_admins:
+        await message.answer("✅ Ваша анкета отправлена на рассмотрение. Ожидайте подтверждения.")
+    else:
+        [cite_start]await message.answer("❌ Произошла ошибка при отправке анкеты администраторам. Попробуйте позже.") # [cite: 90]
+        del pending_logins[user_id]
+
+
+# =============================================================================
+# Завершающие обработчики
+# =============================================================================
+
+@dp.callback_query()
+[cite_start]async def handle_unknown_callback(callback: CallbackQuery): # [cite: 21]
+    await callback.answer("❌ Неизвестная команда")
+
+@dp.message()
+[cite_start]async def handle_other_messages(message: Message): # [cite: 21]
+    # Этот обработчик ловит все сообщения, которые не были пойманы ранее.
+    # Он должен стоять последним среди всех обработчиков сообщений.
+    [cite_start]await message.answer("ℹ️ Неизвестная команда. Используйте /help для просмотра списка доступных команд.") # [cite: 23]
+
+
+# =============================================================================
+# Точка входа и запуск бота
+# =============================================================================
+
+[cite_start]async def main(): # [cite: 106]
+    init_db()
+    await set_commands()
+    print("Бот запущен!")
+    await dp.start_polling(bot)
+
+if __name__ == "__main__":
+    try:
+        [cite_start]asyncio.run(main()) # [cite: 107]
+    except KeyboardInterrupt:
+        print("Бот остановлен!")

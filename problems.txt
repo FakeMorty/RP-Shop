@@ -1,0 +1,5250 @@
+[{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 24,
+	"startColumn": 13,
+	"endLineNumber": 24,
+	"endColumn": 22,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 26,
+	"startColumn": 13,
+	"endLineNumber": 26,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 27,
+	"startColumn": 13,
+	"endLineNumber": 27,
+	"endColumn": 22,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 33,
+	"startColumn": 13,
+	"endLineNumber": 33,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 34,
+	"startColumn": 13,
+	"endLineNumber": 34,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 35,
+	"startColumn": 13,
+	"endLineNumber": 35,
+	"endColumn": 15,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 37,
+	"startColumn": 13,
+	"endLineNumber": 37,
+	"endColumn": 27,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 40,
+	"startColumn": 13,
+	"endLineNumber": 40,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 47,
+	"startColumn": 13,
+	"endLineNumber": 47,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 57,
+	"startColumn": 13,
+	"endLineNumber": 57,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 104,
+	"startColumn": 13,
+	"endLineNumber": 104,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 110,
+	"startColumn": 17,
+	"endLineNumber": 110,
+	"endColumn": 23,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 112,
+	"startColumn": 13,
+	"endLineNumber": 112,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 122,
+	"startColumn": 13,
+	"endLineNumber": 122,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 132,
+	"startColumn": 13,
+	"endLineNumber": 132,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 143,
+	"startColumn": 13,
+	"endLineNumber": 143,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 155,
+	"startColumn": 13,
+	"endLineNumber": 155,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 158,
+	"startColumn": 17,
+	"endLineNumber": 158,
+	"endColumn": 23,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 163,
+	"startColumn": 13,
+	"endLineNumber": 163,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 170,
+	"startColumn": 13,
+	"endLineNumber": 170,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 177,
+	"startColumn": 13,
+	"endLineNumber": 177,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 187,
+	"startColumn": 13,
+	"endLineNumber": 187,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 190,
+	"startColumn": 17,
+	"endLineNumber": 190,
+	"endColumn": 23,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 198,
+	"startColumn": 13,
+	"endLineNumber": 198,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 201,
+	"startColumn": 13,
+	"endLineNumber": 201,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 205,
+	"startColumn": 13,
+	"endLineNumber": 205,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 212,
+	"startColumn": 13,
+	"endLineNumber": 212,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 222,
+	"startColumn": 13,
+	"endLineNumber": 222,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 232,
+	"startColumn": 13,
+	"endLineNumber": 232,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"[\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 233,
+	"startColumn": 22,
+	"endLineNumber": 233,
+	"endColumn": 23,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"[\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 246,
+	"startColumn": 39,
+	"endLineNumber": 246,
+	"endColumn": 40,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 270,
+	"startColumn": 1,
+	"endLineNumber": 270,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 270,
+	"startColumn": 13,
+	"endLineNumber": 270,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 274,
+	"startColumn": 29,
+	"endLineNumber": 274,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 280,
+	"startColumn": 25,
+	"endLineNumber": 280,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 291,
+	"startColumn": 1,
+	"endLineNumber": 291,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 291,
+	"startColumn": 13,
+	"endLineNumber": 291,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 296,
+	"startColumn": 17,
+	"endLineNumber": 296,
+	"endColumn": 21,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 299,
+	"startColumn": 17,
+	"endLineNumber": 299,
+	"endColumn": 23,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 307,
+	"startColumn": 25,
+	"endLineNumber": 307,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 314,
+	"startColumn": 1,
+	"endLineNumber": 314,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 314,
+	"startColumn": 13,
+	"endLineNumber": 314,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 318,
+	"startColumn": 29,
+	"endLineNumber": 318,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 340,
+	"startColumn": 1,
+	"endLineNumber": 340,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 340,
+	"startColumn": 13,
+	"endLineNumber": 340,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 344,
+	"startColumn": 29,
+	"endLineNumber": 344,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 353,
+	"startColumn": 1,
+	"endLineNumber": 353,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 353,
+	"startColumn": 13,
+	"endLineNumber": 353,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 357,
+	"startColumn": 21,
+	"endLineNumber": 357,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 361,
+	"startColumn": 21,
+	"endLineNumber": 361,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 364,
+	"startColumn": 17,
+	"endLineNumber": 364,
+	"endColumn": 21,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 372,
+	"startColumn": 17,
+	"endLineNumber": 372,
+	"endColumn": 22,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 376,
+	"startColumn": 1,
+	"endLineNumber": 376,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 376,
+	"startColumn": 13,
+	"endLineNumber": 376,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 379,
+	"startColumn": 21,
+	"endLineNumber": 379,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 383,
+	"startColumn": 29,
+	"endLineNumber": 383,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 389,
+	"startColumn": 17,
+	"endLineNumber": 389,
+	"endColumn": 22,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 392,
+	"startColumn": 1,
+	"endLineNumber": 392,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 392,
+	"startColumn": 13,
+	"endLineNumber": 392,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 404,
+	"startColumn": 1,
+	"endLineNumber": 404,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 404,
+	"startColumn": 13,
+	"endLineNumber": 404,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 405,
+	"startColumn": 17,
+	"endLineNumber": 405,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 427,
+	"startColumn": 1,
+	"endLineNumber": 427,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 427,
+	"startColumn": 13,
+	"endLineNumber": 427,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 434,
+	"startColumn": 1,
+	"endLineNumber": 434,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 434,
+	"startColumn": 13,
+	"endLineNumber": 434,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 436,
+	"startColumn": 21,
+	"endLineNumber": 436,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 442,
+	"startColumn": 1,
+	"endLineNumber": 442,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 442,
+	"startColumn": 13,
+	"endLineNumber": 442,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 451,
+	"startColumn": 1,
+	"endLineNumber": 451,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 451,
+	"startColumn": 13,
+	"endLineNumber": 451,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 453,
+	"startColumn": 21,
+	"endLineNumber": 453,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 460,
+	"startColumn": 1,
+	"endLineNumber": 460,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 460,
+	"startColumn": 13,
+	"endLineNumber": 460,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 465,
+	"startColumn": 17,
+	"endLineNumber": 465,
+	"endColumn": 21,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 474,
+	"startColumn": 25,
+	"endLineNumber": 474,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 477,
+	"startColumn": 29,
+	"endLineNumber": 477,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 489,
+	"startColumn": 1,
+	"endLineNumber": 489,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 489,
+	"startColumn": 13,
+	"endLineNumber": 489,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 497,
+	"startColumn": 17,
+	"endLineNumber": 497,
+	"endColumn": 23,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 505,
+	"startColumn": 17,
+	"endLineNumber": 505,
+	"endColumn": 23,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 511,
+	"startColumn": 25,
+	"endLineNumber": 511,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 526,
+	"startColumn": 1,
+	"endLineNumber": 526,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 526,
+	"startColumn": 13,
+	"endLineNumber": 526,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 532,
+	"startColumn": 37,
+	"endLineNumber": 532,
+	"endColumn": 38,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 542,
+	"startColumn": 1,
+	"endLineNumber": 542,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 542,
+	"startColumn": 13,
+	"endLineNumber": 542,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 557,
+	"startColumn": 1,
+	"endLineNumber": 557,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 557,
+	"startColumn": 13,
+	"endLineNumber": 557,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 558,
+	"startColumn": 17,
+	"endLineNumber": 558,
+	"endColumn": 21,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 574,
+	"startColumn": 1,
+	"endLineNumber": 574,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 574,
+	"startColumn": 13,
+	"endLineNumber": 574,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 583,
+	"startColumn": 41,
+	"endLineNumber": 583,
+	"endColumn": 42,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 593,
+	"startColumn": 17,
+	"endLineNumber": 593,
+	"endColumn": 22,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 600,
+	"startColumn": 1,
+	"endLineNumber": 600,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 600,
+	"startColumn": 13,
+	"endLineNumber": 600,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 606,
+	"startColumn": 21,
+	"endLineNumber": 606,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 610,
+	"startColumn": 21,
+	"endLineNumber": 610,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 617,
+	"startColumn": 17,
+	"endLineNumber": 617,
+	"endColumn": 22,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 627,
+	"startColumn": 21,
+	"endLineNumber": 627,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 635,
+	"startColumn": 17,
+	"endLineNumber": 635,
+	"endColumn": 32,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 639,
+	"startColumn": 21,
+	"endLineNumber": 639,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 642,
+	"startColumn": 21,
+	"endLineNumber": 642,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 648,
+	"startColumn": 21,
+	"endLineNumber": 648,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 656,
+	"startColumn": 1,
+	"endLineNumber": 656,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 656,
+	"startColumn": 13,
+	"endLineNumber": 656,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 658,
+	"startColumn": 21,
+	"endLineNumber": 658,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 664,
+	"startColumn": 1,
+	"endLineNumber": 664,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 664,
+	"startColumn": 13,
+	"endLineNumber": 664,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 669,
+	"startColumn": 17,
+	"endLineNumber": 669,
+	"endColumn": 22,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 673,
+	"startColumn": 1,
+	"endLineNumber": 673,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 673,
+	"startColumn": 13,
+	"endLineNumber": 673,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 683,
+	"startColumn": 1,
+	"endLineNumber": 683,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 683,
+	"startColumn": 13,
+	"endLineNumber": 683,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 686,
+	"startColumn": 21,
+	"endLineNumber": 686,
+	"endColumn": 27,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 693,
+	"startColumn": 1,
+	"endLineNumber": 693,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 693,
+	"startColumn": 13,
+	"endLineNumber": 693,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 697,
+	"startColumn": 37,
+	"endLineNumber": 697,
+	"endColumn": 38,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 704,
+	"startColumn": 1,
+	"endLineNumber": 704,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 704,
+	"startColumn": 13,
+	"endLineNumber": 704,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 711,
+	"startColumn": 17,
+	"endLineNumber": 711,
+	"endColumn": 23,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 717,
+	"startColumn": 17,
+	"endLineNumber": 717,
+	"endColumn": 23,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 727,
+	"startColumn": 17,
+	"endLineNumber": 727,
+	"endColumn": 25,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 729,
+	"startColumn": 21,
+	"endLineNumber": 729,
+	"endColumn": 29,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 731,
+	"startColumn": 18,
+	"endLineNumber": 731,
+	"endColumn": 19,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 754,
+	"startColumn": 1,
+	"endLineNumber": 754,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 754,
+	"startColumn": 13,
+	"endLineNumber": 754,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 757,
+	"startColumn": 21,
+	"endLineNumber": 757,
+	"endColumn": 27,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 769,
+	"startColumn": 21,
+	"endLineNumber": 769,
+	"endColumn": 25,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 771,
+	"startColumn": 21,
+	"endLineNumber": 771,
+	"endColumn": 27,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 775,
+	"startColumn": 25,
+	"endLineNumber": 775,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 780,
+	"startColumn": 25,
+	"endLineNumber": 780,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 784,
+	"startColumn": 17,
+	"endLineNumber": 784,
+	"endColumn": 22,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 788,
+	"startColumn": 1,
+	"endLineNumber": 788,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 788,
+	"startColumn": 13,
+	"endLineNumber": 788,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 799,
+	"startColumn": 21,
+	"endLineNumber": 799,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 814,
+	"startColumn": 1,
+	"endLineNumber": 814,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 814,
+	"startColumn": 13,
+	"endLineNumber": 814,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 821,
+	"startColumn": 1,
+	"endLineNumber": 821,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 821,
+	"startColumn": 13,
+	"endLineNumber": 821,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 827,
+	"startColumn": 1,
+	"endLineNumber": 827,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 827,
+	"startColumn": 13,
+	"endLineNumber": 827,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 828,
+	"startColumn": 17,
+	"endLineNumber": 828,
+	"endColumn": 22,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 833,
+	"startColumn": 1,
+	"endLineNumber": 833,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 833,
+	"startColumn": 13,
+	"endLineNumber": 833,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 840,
+	"startColumn": 21,
+	"endLineNumber": 840,
+	"endColumn": 25,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 844,
+	"startColumn": 21,
+	"endLineNumber": 844,
+	"endColumn": 27,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 845,
+	"startColumn": 19,
+	"endLineNumber": 845,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 856,
+	"startColumn": 48,
+	"endLineNumber": 856,
+	"endColumn": 49,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 863,
+	"startColumn": 25,
+	"endLineNumber": 863,
+	"endColumn": 46,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 865,
+	"startColumn": 33,
+	"endLineNumber": 865,
+	"endColumn": 34,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 873,
+	"startColumn": 21,
+	"endLineNumber": 873,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 881,
+	"startColumn": 1,
+	"endLineNumber": 881,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 881,
+	"startColumn": 13,
+	"endLineNumber": 881,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 889,
+	"startColumn": 21,
+	"endLineNumber": 889,
+	"endColumn": 27,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 894,
+	"startColumn": 25,
+	"endLineNumber": 894,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 902,
+	"startColumn": 21,
+	"endLineNumber": 902,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 905,
+	"startColumn": 1,
+	"endLineNumber": 905,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 905,
+	"startColumn": 13,
+	"endLineNumber": 905,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 916,
+	"startColumn": 21,
+	"endLineNumber": 916,
+	"endColumn": 27,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 923,
+	"startColumn": 25,
+	"endLineNumber": 923,
+	"endColumn": 31,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 928,
+	"startColumn": 21,
+	"endLineNumber": 928,
+	"endColumn": 36,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 934,
+	"startColumn": 25,
+	"endLineNumber": 934,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 940,
+	"startColumn": 21,
+	"endLineNumber": 940,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 943,
+	"startColumn": 1,
+	"endLineNumber": 943,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 943,
+	"startColumn": 13,
+	"endLineNumber": 943,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 952,
+	"startColumn": 1,
+	"endLineNumber": 952,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 952,
+	"startColumn": 13,
+	"endLineNumber": 952,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 955,
+	"startColumn": 21,
+	"endLineNumber": 955,
+	"endColumn": 27,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 966,
+	"startColumn": 21,
+	"endLineNumber": 966,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "\"(\" was not closed",
+	"source": "basedpyright",
+	"startLineNumber": 969,
+	"startColumn": 35,
+	"endLineNumber": 969,
+	"endColumn": 36,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 986,
+	"startColumn": 1,
+	"endLineNumber": 986,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 986,
+	"startColumn": 13,
+	"endLineNumber": 986,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 1006,
+	"startColumn": 1,
+	"endLineNumber": 1006,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 1006,
+	"startColumn": 13,
+	"endLineNumber": 1006,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 1017,
+	"startColumn": 21,
+	"endLineNumber": 1017,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 1021,
+	"startColumn": 17,
+	"endLineNumber": 1021,
+	"endColumn": 31,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 1032,
+	"startColumn": 25,
+	"endLineNumber": 1032,
+	"endColumn": 30,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 1036,
+	"startColumn": 25,
+	"endLineNumber": 1036,
+	"endColumn": 33,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 1041,
+	"startColumn": 21,
+	"endLineNumber": 1041,
+	"endColumn": 26,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 1050,
+	"startColumn": 1,
+	"endLineNumber": 1050,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 1050,
+	"startColumn": 13,
+	"endLineNumber": 1050,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Expected function or class declaration after decorator",
+	"source": "basedpyright",
+	"startLineNumber": 1054,
+	"startColumn": 1,
+	"endLineNumber": 1054,
+	"endColumn": 2,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 1054,
+	"startColumn": 13,
+	"endLineNumber": 1054,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 1057,
+	"startColumn": 17,
+	"endLineNumber": 1057,
+	"endColumn": 22,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 1064,
+	"startColumn": 13,
+	"endLineNumber": 1064,
+	"endColumn": 18,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"severity": 8,
+	"message": "Statements must be separated by newlines or semicolons",
+	"source": "basedpyright",
+	"startLineNumber": 1072,
+	"startColumn": 21,
+	"endLineNumber": 1072,
+	"endColumn": 28,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 24,
+	"startColumn": 2,
+	"endLineNumber": 24,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 26,
+	"startColumn": 2,
+	"endLineNumber": 26,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 27,
+	"startColumn": 2,
+	"endLineNumber": 27,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 33,
+	"startColumn": 2,
+	"endLineNumber": 33,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 34,
+	"startColumn": 2,
+	"endLineNumber": 34,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 35,
+	"startColumn": 2,
+	"endLineNumber": 35,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 37,
+	"startColumn": 2,
+	"endLineNumber": 37,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 40,
+	"startColumn": 2,
+	"endLineNumber": 40,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 47,
+	"startColumn": 2,
+	"endLineNumber": 47,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 57,
+	"startColumn": 2,
+	"endLineNumber": 57,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 104,
+	"startColumn": 2,
+	"endLineNumber": 104,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 110,
+	"startColumn": 6,
+	"endLineNumber": 110,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 112,
+	"startColumn": 2,
+	"endLineNumber": 112,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 122,
+	"startColumn": 2,
+	"endLineNumber": 122,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 128,
+	"startColumn": 6,
+	"endLineNumber": 128,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 132,
+	"startColumn": 2,
+	"endLineNumber": 132,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 143,
+	"startColumn": 2,
+	"endLineNumber": 143,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 155,
+	"startColumn": 2,
+	"endLineNumber": 155,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 158,
+	"startColumn": 6,
+	"endLineNumber": 158,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 163,
+	"startColumn": 2,
+	"endLineNumber": 163,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 170,
+	"startColumn": 2,
+	"endLineNumber": 170,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 177,
+	"startColumn": 2,
+	"endLineNumber": 177,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 183,
+	"startColumn": 6,
+	"endLineNumber": 183,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 187,
+	"startColumn": 2,
+	"endLineNumber": 187,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 190,
+	"startColumn": 6,
+	"endLineNumber": 190,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 198,
+	"startColumn": 2,
+	"endLineNumber": 198,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 201,
+	"startColumn": 2,
+	"endLineNumber": 201,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 205,
+	"startColumn": 2,
+	"endLineNumber": 205,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 212,
+	"startColumn": 2,
+	"endLineNumber": 212,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 214,
+	"startColumn": 10,
+	"endLineNumber": 214,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 222,
+	"startColumn": 2,
+	"endLineNumber": 222,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 226,
+	"startColumn": 6,
+	"endLineNumber": 226,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 232,
+	"startColumn": 2,
+	"endLineNumber": 232,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 260,
+	"startColumn": 14,
+	"endLineNumber": 260,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 270,
+	"startColumn": 2,
+	"endLineNumber": 270,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 276,
+	"startColumn": 14,
+	"endLineNumber": 276,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 286,
+	"startColumn": 10,
+	"endLineNumber": 286,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 291,
+	"startColumn": 2,
+	"endLineNumber": 291,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 296,
+	"startColumn": 6,
+	"endLineNumber": 296,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 299,
+	"startColumn": 6,
+	"endLineNumber": 299,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 310,
+	"startColumn": 10,
+	"endLineNumber": 310,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 314,
+	"startColumn": 2,
+	"endLineNumber": 314,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 320,
+	"startColumn": 14,
+	"endLineNumber": 320,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 337,
+	"startColumn": 6,
+	"endLineNumber": 337,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 340,
+	"startColumn": 2,
+	"endLineNumber": 340,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 346,
+	"startColumn": 14,
+	"endLineNumber": 346,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 353,
+	"startColumn": 2,
+	"endLineNumber": 353,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 357,
+	"startColumn": 10,
+	"endLineNumber": 357,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 361,
+	"startColumn": 10,
+	"endLineNumber": 361,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 364,
+	"startColumn": 6,
+	"endLineNumber": 364,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 372,
+	"startColumn": 6,
+	"endLineNumber": 372,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 376,
+	"startColumn": 2,
+	"endLineNumber": 376,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 379,
+	"startColumn": 10,
+	"endLineNumber": 379,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 385,
+	"startColumn": 14,
+	"endLineNumber": 385,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 389,
+	"startColumn": 6,
+	"endLineNumber": 389,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 392,
+	"startColumn": 2,
+	"endLineNumber": 392,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 399,
+	"startColumn": 10,
+	"endLineNumber": 399,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 404,
+	"startColumn": 2,
+	"endLineNumber": 404,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 427,
+	"startColumn": 2,
+	"endLineNumber": 427,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 434,
+	"startColumn": 2,
+	"endLineNumber": 434,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 436,
+	"startColumn": 10,
+	"endLineNumber": 436,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 442,
+	"startColumn": 2,
+	"endLineNumber": 442,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 451,
+	"startColumn": 2,
+	"endLineNumber": 451,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 453,
+	"startColumn": 10,
+	"endLineNumber": 453,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 460,
+	"startColumn": 2,
+	"endLineNumber": 460,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 465,
+	"startColumn": 6,
+	"endLineNumber": 465,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 474,
+	"startColumn": 14,
+	"endLineNumber": 474,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 483,
+	"startColumn": 14,
+	"endLineNumber": 483,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 489,
+	"startColumn": 2,
+	"endLineNumber": 489,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 497,
+	"startColumn": 6,
+	"endLineNumber": 497,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 505,
+	"startColumn": 6,
+	"endLineNumber": 505,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 515,
+	"startColumn": 10,
+	"endLineNumber": 515,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 526,
+	"startColumn": 2,
+	"endLineNumber": 526,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 535,
+	"startColumn": 10,
+	"endLineNumber": 535,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 542,
+	"startColumn": 2,
+	"endLineNumber": 542,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 557,
+	"startColumn": 2,
+	"endLineNumber": 557,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 558,
+	"startColumn": 6,
+	"endLineNumber": 558,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 569,
+	"startColumn": 10,
+	"endLineNumber": 569,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 574,
+	"startColumn": 2,
+	"endLineNumber": 574,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 584,
+	"startColumn": 14,
+	"endLineNumber": 584,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 593,
+	"startColumn": 6,
+	"endLineNumber": 593,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 600,
+	"startColumn": 2,
+	"endLineNumber": 600,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 606,
+	"startColumn": 10,
+	"endLineNumber": 606,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 610,
+	"startColumn": 10,
+	"endLineNumber": 610,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 617,
+	"startColumn": 6,
+	"endLineNumber": 617,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 627,
+	"startColumn": 10,
+	"endLineNumber": 627,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 635,
+	"startColumn": 6,
+	"endLineNumber": 635,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 639,
+	"startColumn": 10,
+	"endLineNumber": 639,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 642,
+	"startColumn": 10,
+	"endLineNumber": 642,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 648,
+	"startColumn": 10,
+	"endLineNumber": 648,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 656,
+	"startColumn": 2,
+	"endLineNumber": 656,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 658,
+	"startColumn": 10,
+	"endLineNumber": 658,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 664,
+	"startColumn": 2,
+	"endLineNumber": 664,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 669,
+	"startColumn": 6,
+	"endLineNumber": 669,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 673,
+	"startColumn": 2,
+	"endLineNumber": 673,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 683,
+	"startColumn": 2,
+	"endLineNumber": 683,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 686,
+	"startColumn": 10,
+	"endLineNumber": 686,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 693,
+	"startColumn": 2,
+	"endLineNumber": 693,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 698,
+	"startColumn": 10,
+	"endLineNumber": 698,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 704,
+	"startColumn": 2,
+	"endLineNumber": 704,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 711,
+	"startColumn": 6,
+	"endLineNumber": 711,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 717,
+	"startColumn": 6,
+	"endLineNumber": 717,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 727,
+	"startColumn": 6,
+	"endLineNumber": 727,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 729,
+	"startColumn": 10,
+	"endLineNumber": 729,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 754,
+	"startColumn": 2,
+	"endLineNumber": 754,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 757,
+	"startColumn": 10,
+	"endLineNumber": 757,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 769,
+	"startColumn": 10,
+	"endLineNumber": 769,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 771,
+	"startColumn": 10,
+	"endLineNumber": 771,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 775,
+	"startColumn": 14,
+	"endLineNumber": 775,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 780,
+	"startColumn": 14,
+	"endLineNumber": 780,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 784,
+	"startColumn": 6,
+	"endLineNumber": 784,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 788,
+	"startColumn": 2,
+	"endLineNumber": 788,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 799,
+	"startColumn": 10,
+	"endLineNumber": 799,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 814,
+	"startColumn": 2,
+	"endLineNumber": 814,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 821,
+	"startColumn": 2,
+	"endLineNumber": 821,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 827,
+	"startColumn": 2,
+	"endLineNumber": 827,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 828,
+	"startColumn": 6,
+	"endLineNumber": 828,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 833,
+	"startColumn": 2,
+	"endLineNumber": 833,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 840,
+	"startColumn": 10,
+	"endLineNumber": 840,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 844,
+	"startColumn": 10,
+	"endLineNumber": 844,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 857,
+	"startColumn": 18,
+	"endLineNumber": 857,
+	"endColumn": 28,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 863,
+	"startColumn": 14,
+	"endLineNumber": 863,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 867,
+	"startColumn": 18,
+	"endLineNumber": 867,
+	"endColumn": 28,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 873,
+	"startColumn": 10,
+	"endLineNumber": 873,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 881,
+	"startColumn": 2,
+	"endLineNumber": 881,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 889,
+	"startColumn": 10,
+	"endLineNumber": 889,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 894,
+	"startColumn": 14,
+	"endLineNumber": 894,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 902,
+	"startColumn": 10,
+	"endLineNumber": 902,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 905,
+	"startColumn": 2,
+	"endLineNumber": 905,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 916,
+	"startColumn": 10,
+	"endLineNumber": 916,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 923,
+	"startColumn": 14,
+	"endLineNumber": 923,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 928,
+	"startColumn": 10,
+	"endLineNumber": 928,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 934,
+	"startColumn": 14,
+	"endLineNumber": 934,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 940,
+	"startColumn": 10,
+	"endLineNumber": 940,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 943,
+	"startColumn": 2,
+	"endLineNumber": 943,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 952,
+	"startColumn": 2,
+	"endLineNumber": 952,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 955,
+	"startColumn": 10,
+	"endLineNumber": 955,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 966,
+	"startColumn": 10,
+	"endLineNumber": 966,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 974,
+	"startColumn": 18,
+	"endLineNumber": 974,
+	"endColumn": 28,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 986,
+	"startColumn": 2,
+	"endLineNumber": 986,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1006,
+	"startColumn": 2,
+	"endLineNumber": 1006,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1017,
+	"startColumn": 10,
+	"endLineNumber": 1017,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1021,
+	"startColumn": 6,
+	"endLineNumber": 1021,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1027,
+	"startColumn": 6,
+	"endLineNumber": 1027,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1032,
+	"startColumn": 14,
+	"endLineNumber": 1032,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1036,
+	"startColumn": 14,
+	"endLineNumber": 1036,
+	"endColumn": 24,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1041,
+	"startColumn": 10,
+	"endLineNumber": 1041,
+	"endColumn": 20,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1050,
+	"startColumn": 2,
+	"endLineNumber": 1050,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1054,
+	"startColumn": 2,
+	"endLineNumber": 1054,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1057,
+	"startColumn": 6,
+	"endLineNumber": 1057,
+	"endColumn": 16,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1064,
+	"startColumn": 2,
+	"endLineNumber": 1064,
+	"endColumn": 12,
+	"modelVersionId": 65
+},{
+	"resource": "/c:/Users/morty/OneDrive/Рабочий стол/RP Shop/RP-Shop/code.py",
+	"owner": "pyright",
+	"code": {
+		"value": "reportUndefinedVariable",
+		"target": {
+			"$mid": 1,
+			"path": "/v1.29.4/configuration/config-files/",
+			"scheme": "https",
+			"authority": "docs.basedpyright.com",
+			"fragment": "reportUndefinedVariable"
+		}
+	},
+	"severity": 4,
+	"message": "\"cite_start\" is not defined",
+	"source": "basedpyright",
+	"startLineNumber": 1072,
+	"startColumn": 10,
+	"endLineNumber": 1072,
+	"endColumn": 20,
+	"modelVersionId": 65
+}]
