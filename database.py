@@ -1,15 +1,45 @@
 # -*- coding: utf-8 -*-
+# Файл: database.py (ИСПРАВЛЕННАЯ И ПОЛНАЯ ВЕРСИЯ)
 
 import sqlite3
 import logging
+import hashlib
 
-# Настройка логирования для отслеживания работы с базой данных
+# Настройка логирования
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+def _hash_password(password: str) -> str:
+    """Хэширует пароль для безопасного хранения."""
+    return hashlib.sha256(password.encode()).hexdigest()
+
+def _execute_query(query: str, params: tuple = (), fetchone=False, fetchall=False, commit=False):
+    """Универсальная функция для выполнения запросов к БД."""
+    conn = None
+    try:
+        conn = sqlite3.connect('shop.db')
+        conn.row_factory = sqlite3.Row # Позволяет обращаться к столбцам по имени
+        cursor = conn.cursor()
+        cursor.execute(query, params)
+        
+        if commit:
+            conn.commit()
+            return cursor.lastrowid
+        
+        if fetchone:
+            return cursor.fetchone()
+        
+        if fetchall:
+            return cursor.fetchall()
+
+    except sqlite3.Error as e:
+        logging.error(f"Ошибка базы данных: {e}\nЗапрос: {query}\nПараметры: {params}")
+        return None
+    finally:
+        if conn:
+            conn.close()
+
 def init_db():
-    """
-    Инициализирует базу данных и создает таблицы, если их нет.
-    """
+    """Инициализирует базу данных и создает/обновляет таблицы."""
     try:
         conn = sqlite3.connect('shop.db')
         cursor = conn.cursor()
@@ -23,7 +53,9 @@ def init_db():
                 is_admin INTEGER NOT NULL DEFAULT 0,
                 is_banned INTEGER NOT NULL DEFAULT 0,
                 anketa_chat_id INTEGER,
-                anketa_message_id INTEGER
+                anketa_message_id INTEGER,
+                admin_password_hash TEXT,
+                admin_panel_active INTEGER NOT NULL DEFAULT 0
             )
         ''')
         
@@ -36,12 +68,20 @@ def init_db():
                 description TEXT,
                 photo_id TEXT,
                 price INTEGER NOT NULL,
-                post_message_id INTEGER,
                 is_sold INTEGER NOT NULL DEFAULT 0,
+                post_message_id INTEGER,
                 FOREIGN KEY (owner_id) REFERENCES users (user_id)
             )
         ''')
-        
+
+        user_columns = [desc[1] for desc in cursor.execute("PRAGMA table_info(users)").fetchall()]
+        if 'admin_password_hash' not in user_columns:
+            logging.info("Добавляю столбец 'admin_password_hash'...")
+            cursor.execute("ALTER TABLE users ADD COLUMN admin_password_hash TEXT")
+        if 'admin_panel_active' not in user_columns:
+            logging.info("Добавляю столбец 'admin_panel_active'...")
+            cursor.execute("ALTER TABLE users ADD COLUMN admin_panel_active INTEGER NOT NULL DEFAULT 0")
+
         conn.commit()
         logging.info("База данных успешно инициализирована.")
     except sqlite3.Error as e:
@@ -50,301 +90,132 @@ def init_db():
         if conn:
             conn.close()
 
+# --- Функции для паролей и сессий админов ---
+
+def set_admin_password(user_id: int, password: str):
+    password_hash = _hash_password(password)
+    _execute_query("UPDATE users SET admin_password_hash = ? WHERE user_id = ?", (password_hash, user_id), commit=True)
+    logging.info(f"Пароль для админа {user_id} установлен/обновлен.")
+
+def check_admin_password(user_id: int, password: str) -> bool:
+    password_hash = _hash_password(password)
+    result = _execute_query("SELECT admin_password_hash FROM users WHERE user_id = ?", (user_id,), fetchone=True)
+    return result and result['admin_password_hash'] == password_hash
+
+def has_admin_password(user_id: int) -> bool:
+    result = _execute_query("SELECT admin_password_hash FROM users WHERE user_id = ?", (user_id,), fetchone=True)
+    return result and result['admin_password_hash'] is not None
+
+def activate_admin_panel(user_id: int):
+    _execute_query("UPDATE users SET admin_panel_active = 1 WHERE user_id = ?", (user_id,), commit=True)
+    logging.info(f"Админ-панель для {user_id} активирована.")
+
+def deactivate_admin_panel(user_id: int):
+    _execute_query("UPDATE users SET admin_panel_active = 0 WHERE user_id = ?", (user_id,), commit=True)
+    logging.info(f"Админ-панель для {user_id} деактивирована.")
+
+def is_admin_panel_active(user_id: int) -> bool:
+    result = _execute_query("SELECT admin_panel_active FROM users WHERE user_id = ?", (user_id,), fetchone=True)
+    return result and result['admin_panel_active'] == 1
+
+# --- Функции для пользователей ---
+
+def get_user_id_by_username(username: str) -> int | None:
+    """Находит user_id по его username (без символа @)."""
+    clean_username = username.lstrip('@')
+    result = _execute_query("SELECT user_id FROM users WHERE username = ?", (clean_username,), fetchone=True)
+    return result['user_id'] if result else None
+
 def add_user(user_id: int, username: str):
-    """Добавляет нового пользователя в базу данных."""
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("INSERT INTO users (user_id, username) VALUES (?, ?)", (user_id, username))
-        conn.commit()
-        logging.info(f"Пользователь {username} (ID: {user_id}) добавлен в базу.")
-    except sqlite3.IntegrityError:
-        logging.warning(f"Попытка добавить уже существующего пользователя {user_id}.")
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при добавлении пользователя {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
-
-def set_user_anketa(user_id: int, chat_id: int, message_id: int):
-    """Сохраняет информацию об анкете пользователя."""
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("UPDATE users SET anketa_chat_id = ?, anketa_message_id = ? WHERE user_id = ?", (chat_id, message_id, user_id))
-        conn.commit()
-        logging.info(f"Анкета для пользователя {user_id} сохранена.")
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при сохранении анкеты для {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
-
-def get_user_anketa(user_id: int) -> tuple | None:
-    """Возвращает (anketa_chat_id, anketa_message_id) пользователя."""
-    anketa_data = None
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("SELECT anketa_chat_id, anketa_message_id FROM users WHERE user_id = ?", (user_id,))
-        result = cursor.fetchone()
-        if result and result[0] and result[1]:
-            anketa_data = result
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при получении анкеты для {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
-    return anketa_data
+    _execute_query("INSERT OR IGNORE INTO users (user_id, username) VALUES (?, ?)", (user_id, username), commit=True)
+    logging.info(f"Пользователь {username} (ID: {user_id}) добавлен в базу (если не существовал).")
 
 def user_exists(user_id: int) -> bool:
     """Проверяет, существует ли пользователь в базе."""
-    exists = False
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("SELECT 1 FROM users WHERE user_id = ?", (user_id,))
-        if cursor.fetchone():
-            exists = True
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при проверке пользователя {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
-    return exists
+    return _execute_query("SELECT 1 FROM users WHERE user_id = ?", (user_id,), fetchone=True) is not None
+
+def update_username(user_id: int, new_username: str):
+    """Обновляет юзернейм пользователя."""
+    _execute_query("UPDATE users SET username = ? WHERE user_id = ?", (new_username, user_id), commit=True)
+
+def set_user_anketa(user_id: int, chat_id: int, message_id: int):
+    _execute_query("UPDATE users SET anketa_chat_id = ?, anketa_message_id = ? WHERE user_id = ?", (chat_id, message_id, user_id), commit=True)
+
+def get_user_anketa(user_id: int) -> tuple | None:
+    result = _execute_query("SELECT anketa_chat_id, anketa_message_id FROM users WHERE user_id = ?", (user_id,), fetchone=True)
+    return (result['anketa_chat_id'], result['anketa_message_id']) if result and result['anketa_chat_id'] else None
 
 def get_user_balance(user_id: int) -> int:
-    """Возвращает баланс пользователя."""
-    balance = 0
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("SELECT balance FROM users WHERE user_id = ?", (user_id,))
-        result = cursor.fetchone()
-        if result:
-            balance = result[0]
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при получении баланса для {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
-    return balance
+    result = _execute_query("SELECT balance FROM users WHERE user_id = ?", (user_id,), fetchone=True)
+    return result['balance'] if result else 0
 
 def update_user_balance(user_id: int, amount: int):
-    """Обновляет баланс пользователя (может быть положительным и отрицательным)."""
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("UPDATE users SET balance = balance + ? WHERE user_id = ?", (amount, user_id))
-        conn.commit()
-        logging.info(f"Баланс пользователя {user_id} изменен на {amount}.")
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при обновлении баланса для {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
+    _execute_query("UPDATE users SET balance = balance + ? WHERE user_id = ?", (amount, user_id), commit=True)
+    logging.info(f"Баланс пользователя {user_id} изменен на {amount}.")
 
-def add_item(owner_id: int, name: str, description: str, photo_id: str, price: int) -> int:
-    """Добавляет новый товар в базу и возвращает его ID."""
-    item_id = -1
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute(
-            "INSERT INTO items (owner_id, name, description, photo_id, price) VALUES (?, ?, ?, ?, ?)",
-            (owner_id, name, description, photo_id, price)
-        )
-        conn.commit()
-        item_id = cursor.lastrowid
-        logging.info(f"Товар '{name}' (ID: {item_id}) добавлен пользователем {owner_id}.")
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при добавлении товара от {owner_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
+def get_user_full_profile(user_id: int) -> dict | None:
+    """Возвращает полный профиль пользователя в виде словаря."""
+    result = _execute_query("SELECT * FROM users WHERE user_id = ?", (user_id,), fetchone=True)
+    return dict(result) if result else None
+
+# --- Функции для товаров ---
+
+def add_item(owner_id: int, name: str, description: str, photo_id: str, price: int, post_message_id: int) -> int:
+    item_id = _execute_query(
+        "INSERT INTO items (owner_id, name, description, photo_id, price, post_message_id) VALUES (?, ?, ?, ?, ?, ?)",
+        (owner_id, name, description, photo_id, price, post_message_id), commit=True
+    )
+    logging.info(f"Товар '{name}' (ID: {item_id}) добавлен пользователем {owner_id}.")
     return item_id
 
-def add_post_message_id_to_item(item_id: int, message_id: int):
-    """Добавляет ID сообщения из канала к товару."""
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("UPDATE items SET post_message_id = ? WHERE item_id = ?", (message_id, item_id))
-        conn.commit()
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при добавлении message_id к товару {item_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
-
-def get_item_details(item_id: int) -> dict:
-    """Возвращает детали товара по его ID."""
-    details = None
-    try:
-        conn = sqlite3.connect('shop.db')
-        conn.row_factory = sqlite3.Row
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM items WHERE item_id = ?", (item_id,))
-        row = cursor.fetchone()
-        if row:
-            details = dict(row)
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при получении деталей товара {item_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
-    return details
+def get_item_details(item_id: int) -> dict | None:
+    result = _execute_query("SELECT * FROM items WHERE item_id = ?", (item_id,), fetchone=True)
+    return dict(result) if result else None
 
 def mark_item_as_sold(item_id: int):
-    """Помечает товар как проданный."""
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("UPDATE items SET is_sold = 1 WHERE item_id = ?", (item_id,))
-        conn.commit()
-        logging.info(f"Товар {item_id} помечен как проданный.")
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при обновлении статуса товара {item_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
+    _execute_query("UPDATE items SET is_sold = 1 WHERE item_id = ?", (item_id,), commit=True)
+    logging.info(f"Товар {item_id} помечен как проданный.")
 
-def get_user_items(user_id: int) -> list:
-    """Возвращает список всех товаров пользователя."""
-    items = []
-    try:
-        conn = sqlite3.connect('shop.db')
-        conn.row_factory = sqlite3.Row
-        cursor = conn.cursor()
-        cursor.execute("SELECT item_id, name, price, is_sold FROM items WHERE owner_id = ? ORDER BY item_id DESC", (user_id,))
-        items = [dict(row) for row in cursor.fetchall()]
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при получении товаров для {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
-    return items
+def get_user_items(user_id: int, limit: int, offset: int) -> list:
+    query = "SELECT item_id, name, price, is_sold FROM items WHERE owner_id = ? ORDER BY item_id DESC LIMIT ? OFFSET ?"
+    results = _execute_query(query, (user_id, limit, offset), fetchall=True)
+    return [dict(row) for row in results] if results else []
+
+def count_user_items(user_id: int) -> int:
+    result = _execute_query("SELECT COUNT(item_id) as count FROM items WHERE owner_id = ?", (user_id,), fetchone=True)
+    return result['count'] if result else 0
 
 def remove_item(item_id: int):
-    """Удаляет товар из базы данных."""
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("DELETE FROM items WHERE item_id = ?", (item_id,))
-        conn.commit()
-        logging.info(f"Товар {item_id} удален из базы.")
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при удалении товара {item_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
+    _execute_query("DELETE FROM items WHERE item_id = ?", (item_id,), commit=True)
+    logging.info(f"Товар {item_id} удален из базы.")
 
 def count_active_user_items(user_id: int) -> int:
-    """Считает количество активных (не проданных) товаров у пользователя."""
-    count = 0
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("SELECT COUNT(item_id) FROM items WHERE owner_id = ? AND is_sold = 0", (user_id,))
-        result = cursor.fetchone()
-        if result:
-            count = result[0]
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при подсчете активных товаров для {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
-    return count
+    result = _execute_query("SELECT COUNT(item_id) as count FROM items WHERE owner_id = ? AND is_sold = 0", (user_id,), fetchone=True)
+    return result['count'] if result else 0
+
+# --- Функции для администрирования ---
 
 def set_admin(user_id: int):
-    """Назначает пользователя администратором."""
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("UPDATE users SET is_admin = 1 WHERE user_id = ?", (user_id,))
-        conn.commit()
-        logging.info(f"Пользователь {user_id} назначен администратором.")
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при назначении админа {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
+    _execute_query("UPDATE users SET is_admin = 1 WHERE user_id = ?", (user_id,), commit=True)
+    logging.info(f"Пользователь {user_id} назначен администратором.")
 
 def remove_admin(user_id: int):
-    """Снимает с пользователя права администратора."""
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("UPDATE users SET is_admin = 0 WHERE user_id = ?", (user_id,))
-        conn.commit()
-        logging.info(f"Пользователь {user_id} снят с поста администратора.")
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при снятии админа {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
+    _execute_query("UPDATE users SET is_admin = 0, admin_panel_active = 0, admin_password_hash = NULL WHERE user_id = ?", (user_id,), commit=True)
+    logging.info(f"Пользователь {user_id} снят с поста администратора. Пароль и сессия сброшены.")
 
 def is_user_admin(user_id: int) -> bool:
-    """Проверяет, является ли пользователь администратором."""
-    is_admin = False
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("SELECT is_admin FROM users WHERE user_id = ?", (user_id,))
-        result = cursor.fetchone()
-        if result and result[0] == 1:
-            is_admin = True
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при проверке админ-статуса для {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
-    return is_admin
+    result = _execute_query("SELECT is_admin FROM users WHERE user_id = ?", (user_id,), fetchone=True)
+    return result and result['is_admin'] == 1
 
 def get_all_admins() -> list:
-    """Возвращает список ID всех администраторов."""
-    admins = []
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("SELECT user_id FROM users WHERE is_admin = 1")
-        rows = cursor.fetchall()
-        admins = [row[0] for row in rows]
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при получении списка админов: {e}")
-    finally:
-        if conn:
-            conn.close()
-    return admins
+    results = _execute_query("SELECT user_id FROM users WHERE is_admin = 1", fetchall=True)
+    return [row['user_id'] for row in results] if results else []
 
 def set_user_ban_status(user_id: int, is_banned: bool):
-    """Устанавливает или снимает бан с пользователя."""
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("UPDATE users SET is_banned = ? WHERE user_id = ?", (int(is_banned), user_id))
-        conn.commit()
-        status = "забанен" if is_banned else "разбанен"
-        logging.info(f"Пользователь {user_id} был {status}.")
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при изменении статуса бана для {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
+    _execute_query("UPDATE users SET is_banned = ? WHERE user_id = ?", (int(is_banned), user_id), commit=True)
+    status = "забанен" if is_banned else "разбанен"
+    logging.info(f"Пользователь {user_id} был {status}.")
 
 def is_user_banned(user_id: int) -> bool:
-    """Проверяет, забанен ли пользователь."""
-    is_banned = False
-    try:
-        conn = sqlite3.connect('shop.db')
-        cursor = conn.cursor()
-        cursor.execute("SELECT is_banned FROM users WHERE user_id = ?", (user_id,))
-        result = cursor.fetchone()
-        if result and result[0] == 1:
-            is_banned = True
-    except sqlite3.Error as e:
-        logging.error(f"Ошибка при проверке статуса бана для {user_id}: {e}")
-    finally:
-        if conn:
-            conn.close()
-    return is_banned
+    result = _execute_query("SELECT is_banned FROM users WHERE user_id = ?", (user_id,), fetchone=True)
+    return result and result['is_banned'] == 1
