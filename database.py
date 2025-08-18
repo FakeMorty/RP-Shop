@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Файл: database.py (ИСПРАВЛЕННАЯ И ПОЛНАЯ ВЕРСИЯ)
+# Файл: database.py (Проверенная и финальная версия для этапа с категориями)
 
 import sqlite3
 import logging
@@ -74,6 +74,13 @@ def init_db():
             )
         ''')
 
+        # Проверка и добавление столбца 'category' в таблицу 'items'
+        item_columns = [desc[1] for desc in cursor.execute("PRAGMA table_info(items)").fetchall()]
+        if 'category' not in item_columns:
+            logging.info("Добавляю столбец 'category' в таблицу items...")
+            cursor.execute("ALTER TABLE items ADD COLUMN category TEXT")
+
+        # Проверка и добавление новых столбцов в users, если их нет
         user_columns = [desc[1] for desc in cursor.execute("PRAGMA table_info(users)").fetchall()]
         if 'admin_password_hash' not in user_columns:
             logging.info("Добавляю столбец 'admin_password_hash'...")
@@ -160,12 +167,13 @@ def get_user_full_profile(user_id: int) -> dict | None:
 
 # --- Функции для товаров ---
 
-def add_item(owner_id: int, name: str, description: str, photo_id: str, price: int, post_message_id: int) -> int:
+def add_item(owner_id: int, name: str, description: str, photo_id: str, price: int, post_message_id: int, category: str) -> int:
+    """Сохраняет товар в базу данных, включая его категорию."""
     item_id = _execute_query(
-        "INSERT INTO items (owner_id, name, description, photo_id, price, post_message_id) VALUES (?, ?, ?, ?, ?, ?)",
-        (owner_id, name, description, photo_id, price, post_message_id), commit=True
+        "INSERT INTO items (owner_id, name, description, photo_id, price, post_message_id, category) VALUES (?, ?, ?, ?, ?, ?, ?)",
+        (owner_id, name, description, photo_id, price, post_message_id, category), commit=True
     )
-    logging.info(f"Товар '{name}' (ID: {item_id}) добавлен пользователем {owner_id}.")
+    logging.info(f"Товар '{name}' (ID: {item_id}, Категория: {category}) добавлен пользователем {owner_id}.")
     return item_id
 
 def get_item_details(item_id: int) -> dict | None:
@@ -177,7 +185,8 @@ def mark_item_as_sold(item_id: int):
     logging.info(f"Товар {item_id} помечен как проданный.")
 
 def get_user_items(user_id: int, limit: int, offset: int) -> list:
-    query = "SELECT item_id, name, price, is_sold FROM items WHERE owner_id = ? ORDER BY item_id DESC LIMIT ? OFFSET ?"
+    """Возвращает список товаров пользователя с пагинацией, включая категорию."""
+    query = "SELECT item_id, name, price, is_sold, category FROM items WHERE owner_id = ? ORDER BY item_id DESC LIMIT ? OFFSET ?"
     results = _execute_query(query, (user_id, limit, offset), fetchall=True)
     return [dict(row) for row in results] if results else []
 
