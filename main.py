@@ -33,6 +33,7 @@ CANCELLATION_FEE = 0.125
 MAX_ITEMS_PER_USER = 5
 ITEMS_PER_PAGE = 3
 CATEGORIES = ["Оружие", "Броня", "Зелья", "Ресурсы", "Разное"]
+ITEMS_PER_PAGE = 5 # Количество товаров на одной странице в списке
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -42,6 +43,14 @@ dp = Dispatcher(storage=storage)
 
 
 # --- ФИЛЬТРЫ ---
+class TransactionsPaginator(CallbackData, prefix="trans"):
+    page: int
+
+
+class MyItemsPaginator(CallbackData, prefix="my_items"):
+    action: str # 'page'
+    page: int
+
 class IsAdminFilter(BaseFilter):
     async def __call__(self, message: types.Message) -> bool:
         is_admin = db.is_user_admin(message.from_user.id)
@@ -238,7 +247,15 @@ async def cancel_dialog(message: types.Message, state: FSMContext):
 @dp.message(F.text == "💰 Мой кошелек")
 async def handle_wallet_button(message: types.Message):
     user_balance = db.get_user_balance(message.from_user.id)
-    await message.answer(f"<b>Ваш кошелек</b>\n\n💰 Текущий баланс: <b>{user_balance}</b> золотых монет.")
+    
+    builder = InlineKeyboardBuilder()
+    builder.button(text="🧾 История операций", callback_data=TransactionsPaginator(page=1).pack())
+    
+    await message.answer(
+        f"<b>Ваш кошелек</b>\n\n💰 Текущий баланс: <b>{user_balance}</b> золотых монет.",
+        reply_markup=builder.as_markup()
+    )
+
 
 @dp.message(F.text == "👤 Моя анкета")
 async def handle_my_profile_button(message: types.Message):
@@ -290,42 +307,67 @@ async def format_items_page(user_id: int, page: int = 1):
     builder.row(*nav_buttons)
     return text, builder.as_markup()
 
+import math # Убедитесь, что в самом верху файла есть этот импорт
+async def format_items_page(user_id: int, page: int = 1):
+    """Формирует текст и клавиатуру для страницы со списком товаров."""
+    offset = (page - 1) * ITEMS_PER_PAGE
+    total_items = db.count_user_items(user_id)
+    
+    if total_items == 0:
+        return "У вас пока нет выставленных или проданных товаров.", None
+
+    # Получаем только нужную "порцию" товаров
+    user_items = db.get_user_items(user_id, limit=ITEMS_PER_PAGE, offset=offset)
+    
+    if not user_items and page > 1:
+        # Это на случай, если пользователь как-то попадет на несуществующую страницу
+        return "Здесь пусто.", None
+
+    text = "<b>Ваши товары:</b>\n\n"
+    builder = InlineKeyboardBuilder()
+    for item in user_items:
+        status = "✅ Продан" if item['is_sold'] else "⏳ На продаже"
+        item_text = f"<b>{item['name']}</b>\nЦена: {item['price']} золотых\nСтатус: {status}\n"
+        if not item['is_sold']:
+            # Кнопка удаления остается, как и была
+            builder.button(text=f"❌ Снять «{item['name']}»", callback_data=ManageItemCallback(action="delete", item_id=item['item_id']).pack())
+        text += item_text + "──────────────\n"
+    
+    builder.adjust(1)
+    
+    # Логика для кнопок навигации
+    total_pages = math.ceil(total_items / ITEMS_PER_PAGE)
+    nav_buttons = []
+    if page > 1:
+        nav_buttons.append(types.InlineKeyboardButton(text="◀️ Назад", callback_data=MyItemsPaginator(action="page", page=page-1).pack()))
+    if page < total_pages:
+        nav_buttons.append(types.InlineKeyboardButton(text="Вперёд ▶️", callback_data=MyItemsPaginator(action="page", page=page+1).pack()))
+    
+    # Добавляем ряд с кнопками навигации
+    builder.row(*nav_buttons)
+    
+    return text, builder.as_markup()
+
 @dp.message(F.text == "🛍️ Мои товары")
 async def handle_my_items_button(message: types.Message):
+    """Обработчик для первого нажатия на кнопку 'Мои товары'."""
     text, reply_markup = await format_items_page(message.from_user.id, page=1)
     await message.answer(text, reply_markup=reply_markup)
 
 @dp.callback_query(MyItemsPaginator.filter(F.action == "page"))
 async def handle_my_items_page_switch(query: types.CallbackQuery, callback_data: MyItemsPaginator):
+    """Обработчик для переключения страниц."""
     text, reply_markup = await format_items_page(query.from_user.id, page=callback_data.page)
     try:
+        # Редактируем сообщение, чтобы список обновился на месте
         await query.message.edit_text(text, reply_markup=reply_markup)
     except TelegramBadRequest as e:
-        if "message is not modified" in str(e): await query.answer()
+        # Игнорируем ошибку, если сообщение не изменилось
+        if "message is not modified" in str(e):
+            await query.answer()
         else:
             logging.error(f"Ошибка при переключении страницы товаров: {e}")
             await query.answer("Произошла ошибка.", show_alert=True)
-    await query.answer()
-
-@dp.callback_query(ManageItemCallback.filter(F.action == "delete"))
-async def handle_delete_item_callback(query: types.CallbackQuery, callback_data: ManageItemCallback):
-    item_id = callback_data.item_id
-    item_details = db.get_item_details(item_id)
-    if not item_details or item_details['owner_id'] != query.from_user.id or item_details['is_sold']:
-        await query.answer("❗️ Действие невозможно.", show_alert=True)
-        return
-
-    builder = InlineKeyboardBuilder()
-    builder.button(text="✅ Да, снять", callback_data=ManageItemCallback(action="confirm_delete", item_id=item_id).pack())
-    builder.button(text="Отмена", callback_data=ManageItemCallback(action="cancel_delete", item_id=item_id).pack())
-    builder.adjust(2)
-    
-    fee = int(item_details['price'] * CANCELLATION_FEE)
-    await query.message.edit_text(
-        f"Вы уверены, что хотите снять товар «<b>{item_details['name']}</b>» с продажи?\n\n"
-        f"Будет взыскан штраф: <b>{fee}</b> золотых.",
-        reply_markup=builder.as_markup()
-    )
     await query.answer()
 
 @dp.callback_query(ManageItemCallback.filter(F.action == "cancel_delete"))
@@ -350,6 +392,7 @@ async def handle_confirm_delete_item_callback(query: types.CallbackQuery, callba
     fee = int(price * CANCELLATION_FEE)
     
     db.update_user_balance(user_id, -fee)
+    db.add_transaction(user_id, "Штраф", -fee, details=f"Снятие товара «{item_details['name']}»")
     db.remove_item(item_id)
     
     try:
@@ -474,9 +517,20 @@ async def handle_buy_callback(query: types.CallbackQuery, callback_data: BuyItem
         return
         
     try:
+        # --- НАЧАЛО ТРАНЗАКЦИИ ---
         db.update_user_balance(buyer_id, -price)
         db.update_user_balance(seller_id, price)
         db.mark_item_as_sold(item_id)
+        
+        # --- ИСПРАВЛЕНИЕ: Блок записи транзакций ПЕРЕМЕЩЕН ВНУТРЬ TRY ---
+        buyer_info = await bot.get_chat(buyer_id)
+        seller_info = db.get_user_full_profile(seller_id)
+        
+        # Запись для покупателя
+        db.add_transaction(buyer_id, "Покупка", -price, counterparty_username=f"@{seller_info['username']}", details=item['name'])
+        # Запись для продавца
+        db.add_transaction(seller_id, "Продажа", price, counterparty_username=f"@{buyer_info.username}", details=item['name'])
+        # --- КОНЕЦ ИСПРАВЛЕНИЯ ---
         
         new_caption = query.message.caption + f"\n\n<b>✅ ПРОДАНО</b>\nПокупатель: @{query.from_user.username or query.from_user.full_name}"
         await bot.edit_message_caption(chat_id=MARKET_CHANNEL_ID, message_id=item['post_message_id'], caption=new_caption, reply_markup=None)
@@ -484,6 +538,7 @@ async def handle_buy_callback(query: types.CallbackQuery, callback_data: BuyItem
         await query.answer("✅ Покупка совершена успешно!", show_alert=True)
         await bot.send_message(buyer_id, f"Вы успешно приобрели товар «{item['name']}»! {price} золотых списано с вашего счета.")
         await bot.send_message(seller_id, f"Ваш товар «{item['name']}» был куплен! {price} золотых зачислено на ваш счет.")
+
     except TelegramBadRequest as e:
         if "message is not modified" in str(e): pass
         else: logging.warning(f"Не удалось отредактировать сообщение о продаже товара {item_id}: {e}")
@@ -491,6 +546,53 @@ async def handle_buy_callback(query: types.CallbackQuery, callback_data: BuyItem
     except Exception as e:
         logging.error(f"Критическая ошибка во время транзакции для товара {item_id}: {e}")
         await query.answer("❗️ Произошла критическая ошибка во время покупки.", show_alert=True)
+ITEMS_PER_PAGE_TRANS = 5 # Отдельная константа для транзакций
+
+async def format_transactions_page(user_id: int, page: int = 1):
+    """Формирует текст и клавиатуру для страницы с историей транзакций."""
+    offset = (page - 1) * ITEMS_PER_PAGE_TRANS
+    total_trans = db.count_user_transactions(user_id)
+    
+    if total_trans == 0:
+        return "У вас пока нет ни одной финансовой операции.", None
+
+    transactions = db.get_user_transactions(user_id, limit=ITEMS_PER_PAGE_TRANS, offset=offset)
+    
+    text = "<b>🧾 История ваших операций:</b>\n\n"
+    for trans in transactions:
+        amount = trans['amount']
+        symbol = "➕" if amount > 0 else "➖"
+        abs_amount = abs(amount)
+        
+        counterparty = f"от/для {trans['counterparty_username']}" if trans['counterparty_username'] else ""
+        details = f"({trans['details']})" if trans['details'] else ""
+        
+        text += f"{symbol} <code>{abs_amount} 🪙</code> — {trans['type']} {counterparty} {details}\n"
+        text += f"<pre>     </pre> <i><small>{trans['timestamp'][:16]}</small></i>\n\n"
+
+    builder = InlineKeyboardBuilder()
+    total_pages = math.ceil(total_trans / ITEMS_PER_PAGE_TRANS)
+    nav_buttons = []
+    if page > 1:
+        nav_buttons.append(types.InlineKeyboardButton(text="◀️ Назад", callback_data=TransactionsPaginator(page=page-1).pack()))
+    if page < total_pages:
+        nav_buttons.append(types.InlineKeyboardButton(text="Вперёд ▶️", callback_data=TransactionsPaginator(page=page+1).pack()))
+    
+    builder.row(*nav_buttons)
+    return text, builder.as_markup()
+
+@dp.callback_query(TransactionsPaginator.filter())
+async def handle_transactions_page_switch(query: types.CallbackQuery, callback_data: TransactionsPaginator):
+    """Обработчик для переключения страниц истории транзакций."""
+    text, reply_markup = await format_transactions_page(query.from_user.id, page=callback_data.page)
+    try:
+        await query.message.edit_text(text, reply_markup=reply_markup)
+    except TelegramBadRequest as e:
+        if "message is not modified" not in str(e):
+            logging.error(f"Ошибка при переключении страницы транзакций: {e}")
+            await query.answer("Произошла ошибка.", show_alert=True)
+    await query.answer()
+
 # --- АДМИНИСТРАТИВНЫЙ БЛОК ---
 
 @dp.message(Command("admin"))
@@ -577,6 +679,7 @@ async def give_money_command(message: types.Message):
             return
             
         db.update_user_balance(user_id, amount)
+        db.add_transaction(user_id, "Админ. начисление", amount, counterparty_username=f"@{message.from_user.username}", details="Выдача средств")
         await message.answer(f"✅ Успешно! Начислено <b>{amount}</b> золотых пользователю <code>{user_id}</code>.")
         try:
             await bot.send_message(user_id, f"💰 Вам было начислено <b>{amount}</b> золотых от администрации.")
@@ -601,7 +704,8 @@ async def take_money_command(message: types.Message):
             await message.answer("❌ Сумма должна быть положительным числом.")
             return
             
-        db.update_user_balance(user_id, -amount)
+        #db.update_user_balance(user_id, -amount)
+        db.add_transaction(user_id, "Админ. списание", -amount, counterparty_username=f"@{message.from_user.username}", details="Изъятие средств")
         await message.answer(f"✅ Успешно! Списано <b>{amount}</b> золотых у пользователя <code>{user_id}</code>.")
         try:
             await bot.send_message(user_id, f"💰 У вас было списано <b>{amount}</b> золотых администрацией.")

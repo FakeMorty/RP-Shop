@@ -58,7 +58,18 @@ def init_db():
                 admin_panel_active INTEGER NOT NULL DEFAULT 0
             )
         ''')
-        
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS transactions (
+            transaction_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            type TEXT NOT NULL,
+            amount INTEGER NOT NULL,
+            counterparty_username TEXT,
+            details TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users (user_id)
+        )
+    ''')        
         # Таблица товаров
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS items (
@@ -228,3 +239,27 @@ def set_user_ban_status(user_id: int, is_banned: bool):
 def is_user_banned(user_id: int) -> bool:
     result = _execute_query("SELECT is_banned FROM users WHERE user_id = ?", (user_id,), fetchone=True)
     return result and result['is_banned'] == 1
+
+def add_transaction(user_id: int, type: str, amount: int, counterparty_username: str = None, details: str = None):
+    """
+    Записывает финансовую операцию в историю транзакций.
+    :param user_id: ID пользователя, для которого ведется лог.
+    :param type: Тип операции ('Покупка', 'Продажа', 'Штраф', 'Админ. начисление', 'Админ. списание').
+    :param amount: Сумма операции. Отрицательная для расходов, положительная для доходов.
+    :param counterparty_username: Юзернейм второго участника сделки.
+    :param details: Дополнительные детали (например, название товара).
+    """
+    query = "INSERT INTO transactions (user_id, type, amount, counterparty_username, details) VALUES (?, ?, ?, ?, ?)"
+    _execute_query(query, (user_id, type, amount, counterparty_username, details), commit=True)
+    logging.info(f"Транзакция для {user_id}: {type}, Сумма: {amount}, Детали: {details}")
+
+def get_user_transactions(user_id: int, limit: int, offset: int) -> list:
+    """Возвращает список транзакций пользователя с пагинацией."""
+    query = "SELECT type, amount, counterparty_username, details, timestamp FROM transactions WHERE user_id = ? ORDER BY timestamp DESC LIMIT ? OFFSET ?"
+    results = _execute_query(query, (user_id, limit, offset), fetchall=True)
+    return [dict(row) for row in results] if results else []
+
+def count_user_transactions(user_id: int) -> int:
+    """Считает общее количество транзакций пользователя."""
+    result = _execute_query("SELECT COUNT(transaction_id) as count FROM transactions WHERE user_id = ?", (user_id,), fetchone=True)
+    return result['count'] if result else 0
